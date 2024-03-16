@@ -14,7 +14,7 @@
     width: 100%;
     max-width: 800px;
     height: 115%;
-    object-position: center top;
+    object-position: center 18%;
 }
 .service-img {
     height: 300px;
@@ -24,4 +24,10 @@
 }
 .my-navbar{
     background-color: #F1E6D2;
+}
+
+.small-image{
+    max-width: 400px;
+    width: 80%;
+    height: auto;
 }
