@@ -25,20 +25,20 @@
 
         <div class="row">
             <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-1.jpeg" class="service-img img-fluid" alt="Scenic Safari in Gambia">
+                <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="service-img img-fluid" alt="Scenic Safari in Gambia">
                 <h2>Scenic Safaris</h2>
                 <p>Explore Gambia's breathtaking landscapes and wildlife with our personalized tours. From the lush
                     River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart of
                     West Africa.</p>
             </div>
             <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-2.jpeg" class="service-img img-fluid" alt="Gambia Airport Express">
+                <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="service-img img-fluid" alt="Gambia Airport Express">
                 <h2>Airport Express</h2>
                 <p>Enjoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and
                     departures at Gambia International Airport, ensuring a smooth start and end to your journey.</p>
             </div>
             <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-3.jpeg" class="service-img img-fluid" alt="Custom Cruises in Gambia">
+                <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="service-img img-fluid" alt="Custom Cruises in Gambia">
                 <h2>Custom Cruises</h2>
                 <p>Experience Gambia your way with our customized driving services. Whether you're interested in
                     cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit your
@@ -59,13 +59,13 @@
 
                 </div>
                 <div class="mb-3 mx-1 form-check col-lg-2 col-2 my-auto">
-                    <input type="checkbox" class="form-check-input" id="return" onchange="calculateCost()" name="return">
+                    <input type="checkbox" class="form-check-input" id="return" oninput="calculateCost()" inpu name="return">
                     <label class="form-check-label" for="return">Return Trip</label>
                 </div>
 
                 <div class="mb-3 mx-1 col-lg-3 col-5">
                     <label for="hours" class="form-label">Hours at Destination:</label>
-                    <input type="number" class="form-control" onchange="calculateCost()" id="hours" name="hours"
+                    <input type="number" class="form-control" oninput="calculateCost()" id="hours" name="hours"
                            required>
                 </div>
             </div>
@@ -81,7 +81,7 @@
 
     <div class="container text-center">
         <h2>Find out more about getting a reliable Driver</h2>
-        <img src="images/taxi-driver.jpg" class="img-fluid small-image img-thumbnail" alt="Finding a Driver in Gambia">
+        <img src="images/taxi-driver.jpg" class="img-fluid small-image img-thumbnail" alt="Finding a Driver in Gambia" loading="lazy">
         <p>In our article, you will find information about driving in Gambia.</p>
         <a href="finding-driver-in-serekunda-gambia.html">Finding a Driver in Gambia</a>
     </div>
@@ -120,7 +120,5 @@
 		document.getElementById('totalCost').innerText = 'Total Cost: ' + Math.round(totalCost) + '€ =' + Math.round(totalCostGMD / 100) * 100 + 'GMD';
 	}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9G"></script>
 </body>
 </html>
