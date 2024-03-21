@@ -31,3 +31,38 @@
     width: 80%;
     height: auto;
 }
+
+/* Customizing container max-widths */
+.container {
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px; /* Change this value as needed */
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px; /* Change this value as needed */
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px; /* Change this value as needed */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px; /* Change this value as needed */
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1000px; /* Change this value as needed */
+    }
+}
