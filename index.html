@@ -122,13 +122,14 @@
 </script>
 
 <script>
+    const SEREKUNDA_COORDS = {lat: 13.426121, lng: -16.680796}
 	let map;
 	let directionsService;
 	let directionsRenderer;
 
 	function initMap() {
 		const mapOptions = {
-			center: {lat: 13.443182, lng: -15.310139},
+			center: SEREKUNDA_COORDS,
 			zoom: 13
 		};
 		map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -139,8 +140,12 @@
 		const startInput = document.getElementById("start");
 		const destinationInput = document.getElementById("destination");
 
-		new google.maps.places.Autocomplete(startInput);
-		new google.maps.places.Autocomplete(destinationInput);
+		new google.maps.places.Autocomplete(startInput, {
+			componentRestrictions: {country: "GM"},
+		});
+		new google.maps.places.Autocomplete(destinationInput, {
+			componentRestrictions: {country: "GM"},
+		});
 	}
 
 
@@ -172,7 +177,7 @@
 	)
 	async function placeMarkers(type) {
 		const service = new google.maps.places.PlacesService(map);
-		const gambiaCenter = {lat: 13.426121, lng: -16.680796};
+		const gambiaCenter = SEREKUNDA_COORDS;
 
 		service.nearbySearch({
 			location: gambiaCenter,
