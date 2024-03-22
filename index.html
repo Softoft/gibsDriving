@@ -116,7 +116,7 @@
 
 </main>
 <script src="footer.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&libraries=places"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&libraries=places"></script>
 <script>
 
 </script>
@@ -177,10 +177,8 @@
 	)
 	async function placeMarkers(type) {
 		const service = new google.maps.places.PlacesService(map);
-		const gambiaCenter = SEREKUNDA_COORDS;
-
 		service.nearbySearch({
-			location: gambiaCenter,
+			location: SEREKUNDA_COORDS,
 			radius: 10_000,
 			type: [type]
 		}, (results, status) => {
