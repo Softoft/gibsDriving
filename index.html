@@ -22,8 +22,8 @@
         and Kololi, or a custom driving service, we have you covered. Our experienced drivers are dedicated to
         providing you with a safe, comfortable, and memorable journey through Gambia.</p>
 
-    <section class="row">
-        <div class="col-lg-4 col-md-6 col-12 mb-4">
+    <section class="row g-lg-4">
+        <div class="col-lg-6 col-12 mb-4">
             <div class="card">
                 <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Scenic Safari in Gambia">
                 <div class="card-body">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="col-lg-6 col-12 mb-4">
             <div class="card">
                 <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Gambia Airport Express">
                 <div class="card-body">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="col-lg-6 col-12 mb-4">
             <div class="card">
                 <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Custom Cruises in Gambia">
                 <div class="card-body">
@@ -62,11 +62,16 @@
 
     <section class="my-4">
         <h2 class="mb-3">Driver Cost Calculator</h2>
+        <div id="map" style="height: 400px; width: 100%;"></div>
         <form class="custom-form">
             <div class="row g-3">
                 <div class="col-lg-5 col-md-6">
-                    <label for="distance" class="form-label">Distance (km) one way:</label>
-                    <input type="number" class="form-control" id="distance" name="distance" onchange="calculateCost()" required>
+                    <label for="start" class="form-label">Start</label>
+                    <input type="text" class="form-control" id="start" name="distance" onchange="calculateCost()" required>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <label for="destination" class="form-label">Destination</label>
+                    <input type="number" class="form-control" id="destination" name="distance" onchange="calculateCost()" required>
                 </div>
                 <div class="col-lg-2 col-md-6 d-flex align-items-center">
                     <div class="form-check">
@@ -106,7 +111,37 @@
 
 </main>
 <script src="footer.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&libraries=places"></script>
 <script>
+
+</script>
+
+<script>
+	let map;
+	let directionsService;
+	let directionsRenderer;
+
+	function initMap() {
+		const mapOptions = {
+			center: {lat: 13.443182, lng: -15.310139},
+			zoom: 13
+		};
+		map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		directionsService = new google.maps.DirectionsService();
+		directionsRenderer = new google.maps.DirectionsRenderer();
+		directionsRenderer.setMap(map);
+
+		const startInput = document.getElementById("start");
+		const destinationInput = document.getElementById("destination");
+
+		new google.maps.places.Autocomplete(startInput);
+		new google.maps.places.Autocomplete(destinationInput);
+	}
+
+
+
+	google.maps.event.addDomListener(window, 'load', initMap);
+
 	async function fetchExchangeRate() {
 		const baseCurrency = 'EUR';
 		const targetCurrency = 'GMD';
@@ -114,7 +149,10 @@
 		try {
 			// Using the Open Exchange Rates API for a simple exchange rate request.
 			const response = await fetch(`https://open.er-api.com/v6/latest/${baseCurrency}`);
-			if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
+			if (!response.ok){
+				console.error("Failed to fetch exchange rate:", error);
+				document.getElementById('exchangeRate').textContent = 'Could not load exchange rate.';
+            }
 
 			const data = await response.json();
 			return data.rates[targetCurrency];
@@ -128,11 +166,30 @@
 	fetchExchangeRate().then(
 		(rate) => EXCHANGE_RATE = rate,
 	)
+	function calculateRoute() {
+		const start = document.getElementById("start").value;
+		const destination = document.getElementById("destination").value;
 
-	function calculateCost() {
-		const distance = parseFloat(document.getElementById('distance').value) || 0;
-		const isReturn = document.getElementById('return').checked;
-		const hours = parseFloat(document.getElementById('hours').value) || 0;
+		directionsService.route({
+			origin: start,
+			destination: destination,
+			travelMode: 'DRIVING'
+		}, function(response, status) {
+			if (status === 'OK') {
+				directionsRenderer.setDirections(response);
+				const distance = response.routes[0].legs[0].distance.value / 1000; // Convert to kilometers
+				const costPerKm = 1.5; // Cost per kilometer
+				const cost = distance * costPerKm;
+
+				document.getElementById("distance").innerText = distance.toFixed(2) + ' km';
+				document.getElementById("cost").innerText = '$' + cost.toFixed(2);
+			} else {
+				window.alert('Directions request failed due to ' + status);
+			}
+		});
+	}
+
+	function calculateCost(distance, isReturn, hours) {
 		const totalDistance = isReturn ? distance * 2 : distance;
 		const totalCost = 2 + totalDistance * 0.2 + hours;
 		const totalCostGMD = totalCost * EXCHANGE_RATE
