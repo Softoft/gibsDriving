@@ -116,7 +116,7 @@
 
 </main>
 <script src="footer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&libraries=places"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&callback=initMap"></script>
 <script>
 
 </script>
@@ -147,10 +147,6 @@
 			componentRestrictions: {country: "GM"},
 		});
 	}
-
-
-
-	google.maps.event.addDomListener(window, 'load', initMap);
 
 	async function fetchExchangeRate() {
 		const baseCurrency = 'EUR';
@@ -210,6 +206,7 @@
 				scaledSize: new google.maps.Size(32, 32)
 			}
 		});
+		marker.setMap(map)
 	}
 	placeMarkers('lodging').then()
 	placeMarkers('tourist_attraction').then()
