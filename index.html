@@ -146,6 +146,8 @@
 		new google.maps.places.Autocomplete(destinationInput, {
 			componentRestrictions: {country: "GM"},
 		});
+		placeMarkers('lodging')
+		placeMarkers('tourist_attraction')
 	}
 
 	async function fetchExchangeRate() {
@@ -171,7 +173,7 @@
 	fetchExchangeRate().then(
 		(rate) => EXCHANGE_RATE = rate,
 	)
-	async function placeMarkers(type) {
+	function placeMarkers(type) {
 		const service = new google.maps.places.PlacesService(map);
 		service.nearbySearch({
 			location: SEREKUNDA_COORDS,
@@ -189,7 +191,7 @@
 		});
 	}
 
-	async function createMarker(place, type) {
+	function createMarker(place, type) {
 		let iconUrl = '/images/placeholder.png';
 		if (type === 'lodging') {
 			iconUrl = '/images/hotel.png';
@@ -208,8 +210,7 @@
 		});
 		marker.setMap(map)
 	}
-	placeMarkers('lodging').then()
-	placeMarkers('tourist_attraction').then()
+
 
 
 
