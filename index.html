@@ -82,7 +82,7 @@
             <div class="row form-group">
                 <div class="col-lg-5 col-md-6">
                     <label for="hours" class="form-label">Hours at Destination:</label>
-                    <input type="number" class="form-control" oninput="calculateRoute()" id="hours" name="hours" required>
+                    <input type="number" class="form-control" id="hours" name="hours" required>
                 </div>
             </div>
             <button class="btn btn-primary" onclick="calculateRoute()">Submit</button>
@@ -120,9 +120,8 @@
 <script>
 
 </script>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&callback=initMap"></script>
 <script>
-	window.addEventListener('load', initMap);
 	const SEREKUNDA_COORDS = {lat: 13.426121, lng: -16.680796}
 	let map;
 	let directionsService;
