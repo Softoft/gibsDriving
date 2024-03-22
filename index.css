@@ -1,19 +1,24 @@
+:root{
+    --highlight-color: #E94533;
+    --background-color: #F1E6D2;
+}
+
 .heading {
-    background-color: #F1E6D2;
+    background-color: var(--background-color);
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 300px;
-    max-height: 550px;
+    max-height: 450px;
     height: 45vh;
     overflow: hidden;
 }
 .heading img {
     object-fit: cover;
     width: 100%;
-    max-width: 800px;
-    height: 115%;
+    max-width: 700px;
+    height: auto;
     object-position: center 18%;
 }
 .service-img {
@@ -22,17 +27,50 @@
     object-fit: cover;
     object-position: 50% 10%;
 }
+@media (min-width: 992px)  {
+    .service-img{
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 10%;
+    }
+}
 .my-navbar{
-    background-color: #F1E6D2;
+    background-color: var(--background-color);
 }
 
-.small-image{
+.custom-form {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.total-cost {
+    font-weight: bold;
+}
+
+.medium-image{
     max-width: 400px;
-    width: 80%;
+    width: 100%;
     height: auto;
 }
+.small-image{
+    max-width: 400px;
+    width: 50%;
+    height: auto;
+}
+.clickable-image {
+    transition: transform 0.2s, opacity 0.2s;
+    cursor: pointer;
+}
 
-/* Customizing container max-widths */
+.clickable-image:hover {
+    transform: scale(1.05);
+    opacity: 0.8; /
+}
+
+
 .container {
     max-width: 100%;
 }

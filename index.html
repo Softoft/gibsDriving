@@ -13,75 +13,87 @@
 <body>
 <script src="navbar.js"></script>
 <div class="heading">
-    <img src="images/gibs-driver-gambia-1.jpeg" alt="Gambia DriveHub Experience">
+    <img src="images/gibs-driver-gambia-landscape.jpg" alt="Gambia DriveHub Experience">
 </div>
-<main class="px-5 mx-5">
-    <div class="container my-5">
-        <h1>Welcome to Gibs' Gambia DriveHub</h1>
-        <p>Discover the beauty and culture of Gambia with Gibs' Gambia DriveHub, your trusted partner for all your
-            transportation needs. Whether you're looking for a reliable airport transfer, a scenic tour of Senegambia
-            and Kololi, or a custom driving service, we have you covered. Our experienced drivers are dedicated to
-            providing you with a safe, comfortable, and memorable journey through Gambia.</p>
+<main class="container">
+    <h1>Welcome to Gibs' Gambia DriveHub</h1>
+    <p>Discover the beauty and culture of Gambia with Gibs' Gambia DriveHub, your trusted partner for all your
+        transportation needs. Whether you're looking for a reliable airport transfer, a scenic tour of Senegambia
+        and Kololi, or a custom driving service, we have you covered. Our experienced drivers are dedicated to
+        providing you with a safe, comfortable, and memorable journey through Gambia.</p>
 
-        <div class="row">
-            <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="service-img img-fluid"
-                     alt="Scenic Safari in Gambia">
-                <h2>Scenic Safaris</h2>
-                <p>Explore Gambia's breathtaking landscapes and wildlife with our personalized tours. From the lush
-                    River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart of
-                    West Africa.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="service-img img-fluid"
-                     alt="Gambia Airport Express">
-                <h2>Airport Express</h2>
-                <p>Enjoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and
-                    departures at Gambia International Airport, ensuring a smooth start and end to your journey.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="service-img img-fluid"
-                     alt="Custom Cruises in Gambia">
-                <h2>Custom Cruises</h2>
-                <p>Experience Gambia your way with our customized driving services. Whether you're interested in
-                    cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit your
-                    exploration desires.</p>
+    <section class="row">
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+                <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Scenic Safari in Gambia">
+                <div class="card-body">
+                    <h2 class="card-title">Scenic Safaris</h2>
+                    <p class="card-text">Explore Gambia's breathtaking landscapes and wildlife with our personalized tours. From the lush
+                        River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart of
+                        West Africa.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <h2 class="mb-3">Driver Cost Calculator</h2>
-        <form class="mx-5">
-            <div class="row">
-                <div class="mb-3 col-lg-3 col-5 mx-1">
-                    <label for="distance" class="form-label">Distance[km] (one way):</label>
-                    <div class="row">
-                        <input type="number" class="form-control ml-3" id="distance"
-                               name="distance" onchange="calculateCost()" required>
-                    </div>
-
-                </div>
-                <div class="mb-3 mx-1 form-check col-lg-2 col-2 my-auto">
-                    <input type="checkbox" class="form-check-input" id="return" oninput="calculateCost()" inpu
-                           name="return">
-                    <label class="form-check-label" for="return">Return Trip</label>
-                </div>
-
-                <div class="mb-3 mx-1 col-lg-3 col-5">
-                    <label for="hours" class="form-label">Hours at Destination:</label>
-                    <input type="number" class="form-control" oninput="calculateCost()" id="hours" name="hours"
-                           required>
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+                <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Gambia Airport Express">
+                <div class="card-body">
+                    <h2 class="card-title">Airport Express</h2>
+                    <p class="card-text">njoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and
+                        departures at Gambia International Airport, ensuring a smooth start and end to your journey.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
-            <p id="totalCost">Total Cost: </p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+                <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Custom Cruises in Gambia">
+                <div class="card-body">
+                    <h2 class="card-title">Custom Cruises</h2>
+                    <p class="card-text">Experience Gambia your way with our customized driving services. Whether you're interested in
+                        cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit your
+                        exploration desires.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-4">
+        <h2 class="mb-3">Driver Cost Calculator</h2>
+        <form class="custom-form">
+            <div class="row g-3">
+                <div class="col-lg-5 col-md-6">
+                    <label for="distance" class="form-label">Distance (km) one way:</label>
+                    <input type="number" class="form-control" id="distance" name="distance" onchange="calculateCost()" required>
+                </div>
+                <div class="col-lg-2 col-md-6 d-flex align-items-center">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="return" oninput="calculateCost()" name="return">
+                        <label class="form-check-label" for="return">Return Trip</label>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <label for="hours" class="form-label">Hours at Destination:</label>
+                    <input type="number" class="form-control" oninput="calculateCost()" id="hours" name="hours" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p id="totalCost" class="total-cost">Total Cost: </p>
+                </div>
+            </div>
         </form>
-    </div>
 
+    </section>
 
-    <div class="container row">
+    <section>
         <h2>Find out more about getting a reliable Driver</h2>
-        <img src="images/taxi-driver.jpg" class="img-fluid small-image img-thumbnail rounded-3"
+        <a href="finding-driver-in-serekunda-gambia.html">
+        <img src="images/taxi-driver.jpg" class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
              alt="Finding a Driver in Gambia" loading="lazy">
+        </a>
         <p>
             To find a private driver in Gambia, start by asking for recommendations at your accommodation or from local
             contacts. Utilize online platforms like TripAdvisor and local Facebook groups to find reliable drivers with
@@ -90,7 +102,7 @@
             experience by providing insider knowledge of the area. Remember, word of mouth and online reviews are key to
             finding a trustworthy and experienced driver for your journey in Gambia.</p>
         <a href="finding-driver-in-serekunda-gambia.html">Finding a Driver in Gambia</a>
-    </div>
+    </section>
 
 </main>
 <script src="footer.js"></script>
@@ -124,7 +136,7 @@
 		const totalDistance = isReturn ? distance * 2 : distance;
 		const totalCost = 2 + totalDistance * 0.2 + hours;
 		const totalCostGMD = totalCost * EXCHANGE_RATE
-		document.getElementById('totalCost').innerText = 'Total Cost: ' + Math.round(totalCost) + '€ =' + Math.round(totalCostGMD / 100) * 100 + 'GMD';
+		document.getElementById('totalCost').innerText = 'Total Cost: ' + Math.round(totalCost) + '€ = ' + Math.round(totalCostGMD / 100) * 100 + 'GMD';
 	}
 </script>
 </body>
