@@ -62,34 +62,39 @@
 
     <section class="my-4">
         <h2 class="mb-3">Driver Cost Calculator</h2>
-        <div id="map" style="height: 400px; width: 100%;"></div>
         <form class="custom-form">
-            <div class="row g-3">
+            <div class="row g-3 form-group">
                 <div class="col-lg-5 col-md-6">
                     <label for="start" class="form-label">Start</label>
-                    <input type="text" class="form-control" id="start" name="distance" onchange="calculateCost()" required>
+                    <input type="text" class="form-control" id="start" name="distance" onchange="calculateRoute()" required>
                 </div>
                 <div class="col-lg-5 col-md-6">
                     <label for="destination" class="form-label">Destination</label>
-                    <input type="number" class="form-control" id="destination" name="distance" onchange="calculateCost()" required>
+                    <input type="number" class="form-control" id="destination" name="distance" onchange="calculateRoute()" required>
                 </div>
                 <div class="col-lg-2 col-md-6 d-flex align-items-center">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="return" oninput="calculateCost()" name="return">
+                        <input type="checkbox" class="form-check-input" id="return" oninput="calculateRoute()" name="return">
                         <label class="form-check-label" for="return">Return Trip</label>
                     </div>
                 </div>
+                </div>
+            <div class="row form-group">
                 <div class="col-lg-5 col-md-6">
                     <label for="hours" class="form-label">Hours at Destination:</label>
-                    <input type="number" class="form-control" oninput="calculateCost()" id="hours" name="hours" required>
+                    <input type="number" class="form-control" oninput="calculateRoute()" id="hours" name="hours" required>
                 </div>
             </div>
+            <div id="map" style="height: 400px; width: 100%;"></div>
             <div class="row mt-3">
                 <div class="col-12">
+                    <p>calculation = 2€ + totalDistance * 0.2 + hours</p>
+                    <p id="distance">One Way Distance</p>
                     <p id="totalCost" class="total-cost">Total Cost: </p>
                 </div>
             </div>
         </form>
+        <a href="https://www.flaticon.com/free-icons/pin" title="pin icons">Pin icons created by Freepik - Flaticon</a>
 
     </section>
 
@@ -147,7 +152,6 @@
 		const targetCurrency = 'GMD';
 
 		try {
-			// Using the Open Exchange Rates API for a simple exchange rate request.
 			const response = await fetch(`https://open.er-api.com/v6/latest/${baseCurrency}`);
 			if (!response.ok){
 				console.error("Failed to fetch exchange rate:", error);
@@ -166,6 +170,49 @@
 	fetchExchangeRate().then(
 		(rate) => EXCHANGE_RATE = rate,
 	)
+	async function placeMarkers(type) {
+		const service = new google.maps.places.PlacesService(map);
+		const gambiaCenter = {lat: 13.426121, lng: -16.680796};
+
+		service.nearbySearch({
+			location: gambiaCenter,
+			radius: 10_000,
+			type: [type]
+		}, (results, status) => {
+			if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+				const filteredResults = results.filter(
+					place => place.user_ratings_total && place.user_ratings_total > 100);
+
+				for (let i = 0; i < filteredResults.length; i++) {
+					createMarker(filteredResults[i]);
+				}
+			}
+		});
+	}
+
+	async function createMarker(place, type) {
+		let iconUrl = '/images/placeholder.png';
+		if (type === 'lodging') {
+			iconUrl = '/images/hotel.png';
+		} else if (type === 'tourist_attraction') {
+			iconUrl = '/images/attraction.png';
+		}
+
+		const marker = new google.maps.marker.AdvancedMarkerElement({
+			position: place.geometry.location,
+			map: map,
+			title: place.name,
+			icon: {
+				url: iconUrl,
+				scaledSize: new google.maps.Size(32, 32)
+			}
+		});
+	}
+	placeMarkers('lodging').then()
+	placeMarkers('tourist_attraction').then()
+
+
+
 	function calculateRoute() {
 		const start = document.getElementById("start").value;
 		const destination = document.getElementById("destination").value;
@@ -177,12 +224,12 @@
 		}, function(response, status) {
 			if (status === 'OK') {
 				directionsRenderer.setDirections(response);
-				const distance = response.routes[0].legs[0].distance.value / 1000; // Convert to kilometers
-				const costPerKm = 1.5; // Cost per kilometer
-				const cost = distance * costPerKm;
+				const distance = response.routes[0].legs[0].distance.value / 1000;
 
 				document.getElementById("distance").innerText = distance.toFixed(2) + ' km';
-				document.getElementById("cost").innerText = '$' + cost.toFixed(2);
+				const isReturn = document.getElementById("return").checked
+				const totalDistance = isReturn ? distance * 2 : distance
+                const hours = document.getElementById("hours")
 			} else {
 				window.alert('Directions request failed due to ' + status);
 			}
