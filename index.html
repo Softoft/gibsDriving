@@ -221,7 +221,9 @@
 	function calculateRoute() {
 		const start = document.getElementById("start").value;
 		const destination = document.getElementById("destination").value;
-
+        if(!start || !destination){
+			return;
+        }
 		directionsService.route({
 			origin: start,
 			destination: destination,
@@ -233,8 +235,8 @@
 
 				document.getElementById("distance").innerText = distance.toFixed(2) + ' km';
 				const isReturn = document.getElementById("return").checked
-				const totalDistance = isReturn ? distance * 2 : distance
-                const hours = document.getElementById("hours")
+                const hours = document.getElementById("hours") || 0;
+				calculateCost(distance, isReturn, hours)
 			} else {
 				window.alert('Directions request failed due to ' + status);
 			}
