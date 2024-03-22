@@ -146,8 +146,6 @@
 		new google.maps.places.Autocomplete(destinationInput, {
 			componentRestrictions: {country: "GM"},
 		});
-		placeMarkers('lodging')
-		placeMarkers('tourist_attraction')
 	}
 
 	async function fetchExchangeRate() {
@@ -173,46 +171,6 @@
 	fetchExchangeRate().then(
 		(rate) => EXCHANGE_RATE = rate,
 	)
-	function placeMarkers(type) {
-		const service = new google.maps.places.PlacesService(map);
-		service.nearbySearch({
-			location: SEREKUNDA_COORDS,
-			radius: 10_000,
-			type: [type]
-		}, (results, status) => {
-			if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-				const filteredResults = results.filter(
-					place => place.user_ratings_total && place.user_ratings_total > 100);
-
-				for (let i = 0; i < filteredResults.length; i++) {
-					createMarker(filteredResults[i]);
-				}
-			}
-		});
-	}
-
-	function createMarker(place, type) {
-		let iconUrl = '/images/placeholder.png';
-		if (type === 'lodging') {
-			iconUrl = '/images/hotel.png';
-		} else if (type === 'tourist_attraction') {
-			iconUrl = '/images/attraction.png';
-		}
-
-		const marker = new google.maps.marker.AdvancedMarkerElement({
-			position: place.geometry.location,
-			map: map,
-			title: place.name,
-			icon: {
-				url: iconUrl,
-				scaledSize: new google.maps.Size(32, 32)
-			}
-		});
-		marker.setMap(map)
-	}
-
-
-
 
 	function calculateRoute() {
 		const start = document.getElementById("start").value;
