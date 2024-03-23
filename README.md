@@ -27,5 +27,13 @@ For questions regarding the website project, please open an issue in this reposi
 ## Ideas
 Gambia Map, Gambia News, Current Weather, See Drivers, List all Drivers in Gambia.
 
+https://www.bradtguides.com/write-for-us/
+https://traveltomorrow.com/write-for-us/
+https://findpenguins.com/gambia
+https://www.moxon.net/journeys/the_gambia_river_gambia.html
+https://www.itravelnet.com/gambia/
+https://thetandemramble.com/destinations/africa/traveling-the-gambia/
+https://www.my-gambia.com/mymagazine/many-reasons-to-visit-the-gambia/
+https://transafrica.biz/en/category/gambia-en/?gad_source=1&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q5EflkH75h4BhFYiw5UZZgZAg2hd95kFMlAfaqducUnVYeVqfEKj-oaAttvEALw_wcB
 ## Thanks
 Thank you for visiting Gibs' Gambia DriveHub. We look forward to driving you safely and comfortably on your next adventure in Gambia!
