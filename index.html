@@ -25,11 +25,14 @@
     <section class="row g-lg-4">
         <div class="col-lg-6 col-12 mb-4">
             <div class="card">
-                <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Scenic Safari in Gambia">
+                <img src="images/gibs-driver-gambia-1.jpeg" loading="lazy" class="card-img-top img-fluid"
+                     alt="Scenic Safari in Gambia">
                 <div class="card-body">
                     <h2 class="card-title">Scenic Safaris</h2>
-                    <p class="card-text">Explore Gambia's breathtaking landscapes and wildlife with our personalized tours. From the lush
-                        River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart of
+                    <p class="card-text">Explore Gambia's breathtaking landscapes and wildlife with our personalized
+                        tours. From the lush
+                        River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart
+                        of
                         West Africa.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
@@ -37,10 +40,12 @@
         </div>
         <div class="col-lg-6 col-12 mb-4">
             <div class="card">
-                <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Gambia Airport Express">
+                <img src="images/gibs-driver-gambia-2.jpeg" loading="lazy" class="card-img-top img-fluid"
+                     alt="Gambia Airport Express">
                 <div class="card-body">
                     <h2 class="card-title">Airport Express</h2>
-                    <p class="card-text">njoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and
+                    <p class="card-text">njoy stress-free travel with our reliable airport transfer services. We provide
+                        timely arrivals and
                         departures at Gambia International Airport, ensuring a smooth start and end to your journey.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
@@ -48,11 +53,14 @@
         </div>
         <div class="col-lg-6 col-12 mb-4">
             <div class="card">
-                <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="card-img-top img-fluid" alt="Custom Cruises in Gambia">
+                <img src="images/gibs-driver-gambia-3.jpeg" loading="lazy" class="card-img-top img-fluid"
+                     alt="Custom Cruises in Gambia">
                 <div class="card-body">
                     <h2 class="card-title">Custom Cruises</h2>
-                    <p class="card-text">Experience Gambia your way with our customized driving services. Whether you're interested in
-                        cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit your
+                    <p class="card-text">Experience Gambia your way with our customized driving services. Whether you're
+                        interested in
+                        cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit
+                        your
                         exploration desires.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
@@ -62,50 +70,41 @@
 
     <section class="my-4">
         <h2 class="mb-3">Driver Cost Calculator</h2>
-        <form class="custom-form">
-            <div class="row g-3 form-group">
-                <div class="col-lg-5 col-md-6">
-                    <label for="origin-input" class="form-label">Start</label>
-                    <input type="text" class="form-control" id="origin-input" name="distance" required>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <label for="destination-input" class="form-label">Destination</label>
-                    <input type="text" class="form-control" id="destination-input" name="distance" required>
-                </div>
-                <div class="col-lg-2 col-md-6 d-flex align-items-center">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="return" name="return">
-                        <label class="form-check-label" for="return">Return Trip</label>
+        <form class="mx-5">
+            <div class="row">
+                <div class="mb-3 col-lg-3 col-5 mx-1">
+                    <label for="distance" class="form-label">Distance[km] (one way):</label>
+                    <div class="row">
+                        <input type="number" class="form-control ml-3" id="distance"
+                               name="distance" onchange="calculateCost()" required>
                     </div>
-                </div>
-                </div>
-            <div class="row form-group">
-                <div class="col-lg-5 col-md-6">
-                    <label for="hours" class="form-label">Hours at Destination:</label>
-                    <input type="number" class="form-control" id="hours" name="hours" required>
-                </div>
-            </div>
-            <button class="btn btn-primary" onclick="calculateAndDisplayRoute()">Submit</button>
-            <div id="map" class="my-4" style="height: 400px; width: 100%;"></div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <p>calculation = 2€ + totalDistance * 0.2 + hours</p>
-                    <p id="distance">One Way Distance</p>
-                    <p id="totalCost" class="total-cost">Total Cost: </p>
-                </div>
-            </div>
-        </form>
 
+                </div>
+                <div class="mb-3 mx-1 form-check col-lg-2 col-2 my-auto">
+                    <input type="checkbox" class="form-check-input" id="return" oninput="calculateCost()"
+                           name="return">
+                    <label class="form-check-label" for="return">Return Trip</label>
+                </div>
+
+                <div class="mb-3 mx-1 col-lg-3 col-5">
+                    <label for="hours" class="form-label">Hours at Destination:</label>
+                    <input type="number" class="form-control" oninput="calculateCost()" id="hours" name="hours"
+                           required>
+                </div>
+            </div>
+            <p id="totalCost">Total Cost: </p>
+        </form>
     </section>
 
     <section>
         <h2>Find out more about getting a reliable Driver</h2>
         <a href="finding-driver-in-serekunda-gambia.html">
-        <img src="images/taxi-driver.jpg" class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
-             alt="Finding a Driver in Gambia" loading="lazy">
+            <img src="images/taxi-driver.jpg" class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
+                 alt="Finding a Driver in Gambia" loading="lazy">
         </a>
         <p>
-            To find a private driver in the Gambia, start by asking for recommendations at your accommodation or from local
+            To find a private driver in the Gambia, start by asking for recommendations at your accommodation or from
+            local
             contacts. Utilize online platforms like TripAdvisor and local Facebook groups to find reliable drivers with
             positive reviews. Ensure clear communication about rates, destinations, and any additional services
             beforehand. Hiring a local driver not only supports the local economy but also enriches your travel
@@ -117,6 +116,5 @@
 </main>
 <script src="footer.js"></script>
 <script src="index.js"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&callback=initMap"></script>
 </body>
 </html>

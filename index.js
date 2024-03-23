@@ -1,52 +1,31 @@
-let map;
-let directionsService;
-let directionsRenderer;
-const SEREKUNDA_COORDS = {lat: 13.426121, lng: -16.680796}
-
-async function initMap() {
-	map = new google.maps.Map(document.getElementById("map"), {
-		center: SEREKUNDA_COORDS,
-		zoom: 6,
-	});
-	
-	directionsService = new google.maps.DirectionsService();
-	directionsRenderer = new google.maps.DirectionsRenderer();
-	directionsRenderer.setMap(map);
-	
-	const originInput = document.getElementById("origin-input");
-	const destinationInput = document.getElementById("destination-input");
-	
-	const originAutocomplete = new google.maps.places.Autocomplete(originInput);
-	const destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
-	
-	originAutocomplete.bindTo("bounds", map);
-	destinationAutocomplete.bindTo("bounds", map);
-	
-	originInput.addEventListener("change", () => calculateAndDisplayRoute());
-	destinationInput.addEventListener("change", () => calculateAndDisplayRoute());
-}
-
-async function calculateAndDisplayRoute() {
-	const origin = document.getElementById("origin-input").value;
-	const destination = document.getElementById("destination-input").value;
-	if (!origin || !destination) return;
+async function fetchExchangeRate() {
+	const baseCurrency = 'EUR';
+	const targetCurrency = 'GMD';
 	
 	try {
-		const response = await directionsService.route({
-			origin: origin,
-			destination: destination,
-			travelMode: google.maps.TravelMode.DRIVING,
-		});
+		// Using the Open Exchange Rates API for a simple exchange rate request.
+		const response = await fetch(`https://open.er-api.com/v6/latest/${baseCurrency}`);
+		if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
 		
-		directionsRenderer.setDirections(response);
+		const data = await response.json();
+		return data.rates[targetCurrency];
 	} catch (error) {
-		alert("Could not display directions due to: " + error);
+		console.error("Failed to fetch exchange rate:", error);
+		document.getElementById('exchangeRate').textContent = 'Could not load exchange rate.';
 	}
 }
 
-function calculateCost(distance, isReturn, hours) {
+let EXCHANGE_RATE;
+fetchExchangeRate().then(
+	(rate) => EXCHANGE_RATE = rate
+)
+
+function calculateCost() {
+	const distance = parseFloat(document.getElementById('distance').value) || 0;
+	const isReturn = document.getElementById('return').checked;
+	const hours = parseFloat(document.getElementById('hours').value) || 0;
 	const totalDistance = isReturn ? distance * 2 : distance;
 	const totalCost = 2 + totalDistance * 0.2 + hours;
 	const totalCostGMD = totalCost * EXCHANGE_RATE
-	document.getElementById('totalCost').innerText = 'Total Cost: ' + Math.round(totalCost) + '€ = ' + Math.round(totalCostGMD / 100) * 100 + 'GMD';
+	document.getElementById('totalCost').innerText = 'Total Cost: ' + Math.round(totalCost) + '€ =' + Math.round(totalCostGMD / 100) * 100 + 'GMD';
 }
