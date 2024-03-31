@@ -1,0 +1,16 @@
+{
+  "name": "gibsdriving",
+  "version": "1.0.0",
+  "description": "Welcome to the official repository for Gibs' Gambia DriveHub",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

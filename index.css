@@ -1,65 +1,85 @@
-:root{
+:root {
     --highlight-color: #E94533;
-    --background-color: #F1E6D2;
+    --background-color: #f6f1e8;
 }
-
-.heading {
-    background-color: var(--background-color);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-    max-height: 450px;
-    height: 45vh;
-    overflow: hidden;
+html{
+    font-size: 12px;
 }
-.heading img {
-    object-fit: cover;
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    object-position: center 18%;
-}
-.service-img {
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 10%;
-}
-@media (min-width: 992px)  {
-    .service-img{
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-        object-position: 50% 10%;
+@media (min-width: 400px){
+    html{
+        font-size: 14px;
     }
 }
-.my-navbar{
+@media (min-width: 600px){
+    html{
+        font-size: 15px;
+    }
+}
+@media (min-width: 800px){
+    html{
+        font-size: 16px;
+    }
+}
+@media (min-width: 1000px){
+    html{
+        font-size: 17px;
+    }
+}
+@media (min-width: 1400px){
+    html{
+        font-size: 18px;
+    }
+}
+
+
+body {
     background-color: var(--background-color);
 }
 
-.custom-form {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.heading > img {
+    width: auto;
+    max-height: 400px;
+}
+
+.service-card {
+    height: 35rem;
+    max-width: 25rem;
+}
+
+.service-img {
+    height: 50%;
+    object-fit: cover;
+    object-position: 50% 2%;
+}
+
+.service-text{
+    height: 9rem;
+}
+
+.highlighted-text {
+    color: #550803;
+}
+
+.cost-form {
+    max-width: 400px;
 }
 
 .total-cost {
     font-weight: bold;
 }
 
-.medium-image{
+.medium-image {
     max-width: 400px;
     width: 100%;
     height: auto;
 }
-.small-image{
+
+.small-image {
     max-width: 400px;
-    width: 50%;
+    width: 100%;
     height: auto;
 }
+
 .clickable-image {
     transition: transform 0.2s, opacity 0.2s;
     cursor: pointer;
@@ -67,40 +87,5 @@
 
 .clickable-image:hover {
     transform: scale(1.05);
-    opacity: 0.8; /
-}
-
-
-.container {
-    max-width: 100%;
-}
-
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px; /* Change this value as needed */
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px; /* Change this value as needed */
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 800px; /* Change this value as needed */
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 900px; /* Change this value as needed */
-    }
-}
-
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1000px; /* Change this value as needed */
-    }
+    opacity: 0.8;
 }
