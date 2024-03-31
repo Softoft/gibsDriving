@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 	// Copy the `assets` directory to the output
 	eleventyConfig.addPassthroughCopy("images");
 	eleventyConfig.addPassthroughCopy("index.css");
@@ -6,4 +6,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("CNAME");
 	eleventyConfig.addPassthroughCopy("google260ae717eb48ea92.html");
 	eleventyConfig.addPassthroughCopy("sitemap.xml");
+	return {
+		dir: {
+			output: "docs", // Default output directory
+		},
+	};
 };
