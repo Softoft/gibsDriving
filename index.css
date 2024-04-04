@@ -2,31 +2,37 @@
     --highlight-color: #E94533;
     --background-color: #f6f1e8;
 }
-html{
+
+html {
     font-size: 12px;
 }
-@media (min-width: 400px){
-    html{
+
+@media (min-width: 400px) {
+    html {
         font-size: 14px;
     }
 }
-@media (min-width: 600px){
-    html{
+
+@media (min-width: 600px) {
+    html {
         font-size: 15px;
     }
 }
-@media (min-width: 800px){
-    html{
+
+@media (min-width: 800px) {
+    html {
         font-size: 16px;
     }
 }
-@media (min-width: 1000px){
-    html{
+
+@media (min-width: 1000px) {
+    html {
         font-size: 17px;
     }
 }
-@media (min-width: 1400px){
-    html{
+
+@media (min-width: 1400px) {
+    html {
         font-size: 18px;
     }
 }
@@ -37,8 +43,98 @@ body {
 }
 
 .heading > img {
+    position: absolute;
+    z-index: -1;
+    height: 200px;
+}
+
+
+.heading {
+    position: static;
+    background-color: rgba(90, 80, 60, 0.7);
     width: auto;
-    max-height: 400px;
+    height: 200px;
+
+}
+
+.font-size-medium {
+    font-size: 2rem;
+}
+
+@media (min-width: 400px) {
+    .heading {
+        height: 300px;
+    }
+
+    .heading > img {
+        height: 300px;
+    }
+    .font-size-medium {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 610px) {
+    .heading {
+        height: 400px;
+    }
+
+    .heading > img {
+        height: 400px;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .heading {
+        height: 500px;
+    }
+
+    .heading > img {
+        height: 500px;
+    }
+
+    .font-size-medium {
+        font-size: 8rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .heading {
+        height: 600px;
+    }
+
+    .heading > img {
+        height: 600px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .heading {
+        height: 700px;
+    }
+
+    .heading > img {
+        height: 700px;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .heading {
+        height: 800px;
+    }
+
+    .heading > img {
+        height: 800px;
+    }
+}
+
+.hero-content {
+    top: 5rem;
+    left: 0px;
+    position: relative;
 }
 
 .service-card {
@@ -52,12 +148,24 @@ body {
     object-position: 50% 2%;
 }
 
-.service-text{
+.service-text {
     height: 9rem;
 }
 
 .highlighted-text {
     color: #550803;
+}
+
+a {
+    color: #550803;
+}
+
+.my-navbar {
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.my-footer {
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 .cost-form {

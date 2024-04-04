@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml version="1.0" encoding="UTF-8" xmlns="https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"?>
+<urlset>
     <url>
         <loc>https://www.gibsgambia.tours</loc>
     </url>
     <url>
-        <loc>https://www.gibsgambia.tours/banjul-airport-gambia-transport.html</loc>
+        <loc>https://www.gibsgambia.tours/banjul-airport-gambia-transport</loc>
     </url>
     <url>
-        <loc>https://www.gibsgambia.tours/finding-driver-in-serekunda-gambia.html</loc>
+        <loc>https://www.gibsgambia.tours/finding-driver-in-serekunda-gambia</loc>
+    </url>
+    <url>
+        <loc>https://www.gibsgambia.tours/gambia-driver</loc>
     </url>
 </urlset>
