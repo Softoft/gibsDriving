@@ -1,0 +1,93 @@
+---
+title: "Gambia Gibs Driver"
+description: "Gibs Jaiteh is a professional driver in The Gambia. He offers airport transfers, tours, and more. Contact him now!"
+mainImageName: "logo"
+imgAlt: "Gibs Jaiteh"
+isoDatePublished: "2024-01-01"
+isoDateModified: "2024-01-01"
+faqs:
+  - question: "What services does Gibs offer?"
+    answer: "Gibs offers airport transfers, tours, and more. Contact him now!"
+  - question: "How can I contact Gibs?"
+    answer: "For bookings and inquiries: +220 9479117"
+  - question: "Does Gibs have an Instagram account?"
+    answer: "Yes, follow him on Instagram: https://www.instagram.com/mrgibsgambia"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="{{ description }}" name="description">
+    <title>{{ title }}</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+
+    <link href="/index.css" rel="stylesheet">
+    <link href="https://softoft.sirv.com/gibs/logo" rel="icon">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "{{ title }}",
+            "image": [
+        "https://softoft.sirv.com/gibs/{{ mainImageName }}"
+        ],
+        "datePublished": "{{ isoDatePublished }}",
+        "dateModified": "{{ isoDateModified }}",
+        "author": [{
+            "@type": "Person",
+            "name": "Tobias Bueck",
+            "url": "https://wwww.softoft.de/de"
+        }]
+    }
+    </script>
+    {% if page.faqs %}
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+            {% for faq in page.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+            ]
+          }
+        </script>
+    {% endif %}
+
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand highlighted-text fs-5" href="/">Gibs' Gambia DriveHub</a>
+    </nav>
+</div>
+<article class="container">
+    <img src="https://softoft.sirv.com/gibs/{{ mainImageName }}" class="img-fluid rounded" alt="{{ imgAlt }}">
+    <h1>{{ title }}</h1>
+    {{ content }}
+</article>
+<section class="container text-center my-5" id="contact">
+    <h2>Contact Gibs' Gambia DriveHub</h2>
+    <p>Gibs Jaiteh</p>
+    <p>For bookings and inquiries: +220 9479117</p>
+    <a class="btn btn-success" href="https://wa.me/2209479117">Chat on WhatsApp</a>
+    <a class="btn btn-info" href="https://www.instagram.com/mrgibsgambia">Follow on Instagram</a>
+</section>
+<footer class="text-center text-lg-start my-footer">
+    <div class="text-center p-3">
+        © 2024 Gibs Jaiteh: Your Premier Gambia Driving Service <br/>
+        Driver - Gibs Jaiteh <br/>
+        Responsible for Website - Softoft, Tobias Bueck Einzelunternehmen <a href="https://www.softoft.de">https://www.softoft.de</a>
+    </div>
+</footer>
+</body>
+</html>
