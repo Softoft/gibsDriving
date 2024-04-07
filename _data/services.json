@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Scenic Safaris",
+    "description": "Explore Gambia's breathtaking landscapes and wildlife with our personalized tours. From the lush River Gambia National Park to the vibrant streets of Banjul, let us guide you through the heart of West Africa.",
+    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-car",
+    "imgAlt": "Driver Gibs inside the Car",
+    "buttonLink": "#contact"
+  },
+  {
+    "title": "Airport Express",
+    "description": "Enjoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and departures at Gambia International Airport, ensuring a smooth start and end to your journey.",
+    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car1",
+    "imgAlt": "Driver Gibs in front of the car - Gambia plants in background",
+    "buttonLink": "#contact"
+  },
+  {
+    "title": "Custom Cruises",
+    "description": "Experience Gambia your way with our customized driving services. Whether you're interested in cultural excursions, beach getaways, or exploring local markets, we tailor our services to fit your exploration desires.",
+    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car2",
+    "imgAlt": "Driver Gibs in front of the car - blurred house background",
+    "buttonLink": "#contact"
+  }
+]
