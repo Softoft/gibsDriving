@@ -1,6 +1,7 @@
 :root {
     --highlight-color: #E94533;
     --background-color: #f6f1e8;
+    --bs-primary-bg-subtle: #f6f1e8;
 }
 
 html {

@@ -5,13 +5,6 @@ mainImageName: "logo"
 imgAlt: "Gibs Jaiteh"
 isoDatePublished: "2024-01-01"
 isoDateModified: "2024-01-01"
-faqs:
-  - question: "What services does Gibs offer?"
-    answer: "Gibs offers airport transfers, tours, and more. Contact him now!"
-  - question: "How can I contact Gibs?"
-    answer: "For bookings and inquiries: +220 9479117"
-  - question: "Does Gibs have an Instagram account?"
-    answer: "Yes, follow him on Instagram: https://www.instagram.com/mrgibsgambia"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -42,13 +35,13 @@ faqs:
         }]
     }
     </script>
-    {% if page.faqs %}
+    {% if faqs %}
         <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
-            {% for faq in page.faqs %}
+            {% for faq in faqs %}
     {
       "@type": "Question",
       "name": "{{ faq.question | escape }}",
@@ -56,7 +49,7 @@ faqs:
         "@type": "Answer",
         "text": "{{ faq.answer | escape }}"
       }
-    }{% unless forloop.last %},{% endunless %}
+    }{% unless forloop.last %}{% endunless %}
             {% endfor %}
             ]
           }
@@ -74,7 +67,33 @@ faqs:
     <img src="https://softoft.sirv.com/gibs/{{ mainImageName }}" class="img-fluid rounded" alt="{{ imgAlt }}">
     <h1>{{ title }}</h1>
     {{ content }}
+    {% if faqs %}
+        <section class="faq">
+            <div class="accordion" id="accordionExample">
+
+                <h2>FAQ</h2>
+                {% for faq in faqs %}
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{ faq.question | escape }}
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{ faq.answer | escape }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 </article>
+
+
 <section class="container text-center my-5" id="contact">
     <h2>Contact Gibs' Gambia DriveHub</h2>
     <p>Gibs Jaiteh</p>
@@ -89,5 +108,8 @@ faqs:
         Responsible for Website - Softoft, Tobias Bueck Einzelunternehmen <a href="https://www.softoft.de">https://www.softoft.de</a>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
