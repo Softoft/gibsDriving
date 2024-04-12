@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const preferredLang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.language;
+			if (preferredLang.startsWith('nl')) {
+				window.location.href = '/nl/';
+			} else {
+				window.location.href = '/en/';
+			}
+		});
+    </script>
+</head>
+<body>
+<p>If you are not redirected, <a href="/en/">click here for English</a> or <a href="/nl/">click here for Dutch</a>.</p>
+</body>
+</html>
