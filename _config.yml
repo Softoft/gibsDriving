@@ -1,0 +1,11 @@
+plugins:
+  - jekyll-redirect-from
+
+redirect_from:
+  "/": "/en/"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null

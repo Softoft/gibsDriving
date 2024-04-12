@@ -2,6 +2,7 @@
 layout: base.liquid
 title: Driver in Gambia Mr. Gibs
 description: "Find the perfect Driver for getting arround in the Gambia!"
+lang: "en"
 ---
 
 <div class="d-flex justify-content-center heading">
@@ -22,7 +23,8 @@ description: "Find the perfect Driver for getting arround in the Gambia!"
         {% for service in services %}
             <div class="col">
                 <div class="card service-card mx-auto">
-                    <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy" src="{{ service.imgSrc }}">
+                    <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy"
+                         src="{{ service.imgSrc }}">
                     <div class="card-body">
                         <h2 class="card-title">{{ service.title }}</h2>
                         <p class="card-text service-text">{{ service.description }}</p>
@@ -59,16 +61,16 @@ description: "Find the perfect Driver for getting arround in the Gambia!"
     {% for blog in blogsOverview %}
         <section>
             <h2>{{ blog.title }}</h2>
-            <a href="{{ blog.link }}">
+            <a href="{{ blog.link | locale_url }}">
                 <img alt="{{ blog.imgAlt }}"
                      class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
                      loading="lazy" src="{{ blog.imgSrc }}">
             </a>
             <p>{{ blog.description }}</p>
-            <a class="btn btn-primary" href="{{ blog.link }}" role="button">Learn More</a>
+            <a class="btn btn-primary" href="{{ blog.link | locale_url }}" role="button">Learn More</a>
         </section>
     {% endfor %}
 
 
 </main>
-<script async src="index.js"></script>
+<script async src="../index.js"></script>
