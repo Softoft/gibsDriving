@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const preferredLang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.language;
+			if (preferredLang.startsWith('nl')) {
+				window.location.href = '/nl/top-places-to-visit';
+			} else {
+				window.location.href = '/en/top-places-to-visit';
+			}
+		});
+    </script>
+</head>
+<body>
+<p>If you are not redirected, <a href="/en/top-places-to-visit">click here for English</a> or <a href="/nl/top-places-to-visit">click here for Dutch</a>.</p>
+</body>
+</html>
