@@ -1,7 +1,7 @@
 ---
 layout: base.liquid
 title: Driver in Gambia Mr. Gibs
-description: "Find the perfect Driver for getting arround in the Gambia!"
+description: "Gibs Gambia Taxi - Find the perfect Driver for getting around in the Gambia!"
 lang: "en"
 ---
 
@@ -10,11 +10,11 @@ lang: "en"
         <h1 class="text-light display-1 font-size-medium">Feel Gambia</h1>
         <h2 class="text-light">With an experienced local Driver</h2>
     </div>
-    <img alt="Gambia Driver Gibs" src="https://softoft.sirv.com/gibs/gambia-market">
+    <img alt="Gambia Driver Gibs" src="https://softoft.sirv.com/gibs/gambia-market?q=2">
 </div>
 <main class="container my-3">
     <h1>Driver in Gambia: Mr. Gibs</h1>
-    <p>Discover the beauty and culture of the Gambia with Gibs' Gambia DriveHub, your trusted partner for all your
+    <p>Discover the beauty and culture of the Gambia with Gibs' Gambia Taxi Service, your trusted partner for all your
         transportation needs. Whether you're looking for a reliable airport transfer, a scenic tour of Senegambia
         and Kololi, or a custom driving service, we have you covered. Our experienced drivers are dedicated to
         providing you with a safe, comfortable, and memorable journey through the Gambia.</p>
@@ -28,7 +28,7 @@ lang: "en"
                     <div class="card-body">
                         <h2 class="card-title">{{ service.title }}</h2>
                         <p class="card-text service-text">{{ service.description }}</p>
-                        <a class="btn btn-primary" href="{{ service.buttonLink }}" role="button">Learn More</a>
+                        <a href="{{ service.buttonLink }}">{{ service.title }}</a>
                     </div>
                 </div>
             </div>
@@ -54,23 +54,21 @@ lang: "en"
             <label class="form-label" for="hours">Hours at Destination:</label>
             <input class="form-control" id="hours" name="hours" oninput="calculateCost()" required
                    type="number">
-            <p id="totalCost">Total Cost: </p>
+            <p><strong id="totalCost">Total Cost: </strong></p>
         </form>
     </section>
 
-    {% for blog in blogsOverview %}
-        <section>
-            <h2>{{ blog.title }}</h2>
-            <a href="{{ blog.link | locale_url }}">
-                <img alt="{{ blog.imgAlt }}"
+    {% for blog in collections.englishBlogs %}
+        <section class="py-2">
+            <h2>{{ blog.data.title }}</h2>
+            <a href="{{ blog.page.url }}">
+                <img alt="{{ blog.data.imgAlt }}"
                      class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
-                     loading="lazy" src="{{ blog.imgSrc }}">
+                     loading="lazy" src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}">
             </a>
-            <p>{{ blog.description }}</p>
-            <a class="btn btn-primary" href="{{ blog.link | locale_url }}" role="button">Learn More</a>
+            <p>{{ blog.data.description }}</p>
+            <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
         </section>
     {% endfor %}
-
-
 </main>
 <script async src="../index.js"></script>

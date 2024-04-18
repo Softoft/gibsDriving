@@ -134,12 +134,12 @@ body {
 
 .hero-content {
     top: 5rem;
-    left: 0px;
+    left: 0;
     position: relative;
 }
 
 .service-card {
-    height: 35rem;
+    height: 38rem;
     max-width: 25rem;
 }
 
@@ -178,13 +178,13 @@ a {
 }
 
 .medium-image {
-    max-width: 600px;
+    max-width: 20rem;
     width: 100%;
     height: auto;
 }
 
 .small-image {
-    max-width: 400px;
+    max-width: 15rem;
     width: 100%;
     height: auto;
 }
@@ -197,4 +197,8 @@ a {
 .clickable-image:hover {
     transform: scale(1.05);
     opacity: 0.8;
+}
+
+.blog-section{
+    padding-bottom: 1rem;
 }

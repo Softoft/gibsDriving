@@ -11,6 +11,13 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("CNAME");
 	eleventyConfig.addPassthroughCopy("sitemap.xml");
 	eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addPassthroughCopy("google260ae717eb48ea92.html");
+	eleventyConfig.addCollection("englishBlogs", function(collectionApi) {
+		return collectionApi.getFilteredByTag("blog").filter((item) => item.page.lang === "en");
+	});
+	eleventyConfig.addCollection("dutchBlogs", function(collectionApi) {
+		return collectionApi.getFilteredByTag("blog").filter((item) => item.page.lang === "nl");
+	});
 	return {
 		dir: {
 			output: "docs",
