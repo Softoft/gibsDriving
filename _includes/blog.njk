@@ -84,4 +84,38 @@ tags: blog
         </section>
     {% endif %}
 </article>
+<section class="container">
+{% if page.lang == "nl" %}
+<h2>Andere blogs die je misschien leuk vindt</h2>
+    {% for blog in collections.dutchBlogs %}
+    <section class="py-2">
+        <h2>{{ blog.data.title }}</h2>
+        <a href="{{ blog.page.url }}">
+            <img alt="{{ blog.data.imgAlt }}"
+                 class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
+                 loading="lazy" src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}">
+        </a>
+        <p>{{ blog.data.description }}</p>
+        <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
+    </section>
+    {% endfor %}
+    {% endif %}
+
+{% if page.lang== "en" %}
+<h2>Other blogs you might like</h2>
+    {% for blog in collections.englishBlogs %}
+    <section class="py-2">
+        <h2>{{ blog.data.title }}</h2>
+        <a href="{{ blog.page.url }}">
+            <img alt="{{ blog.data.imgAlt }}"
+                 class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
+                 loading="lazy" src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}">
+        </a>
+        <p>{{ blog.data.description }}</p>
+        <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
+    </section>
+    {% endfor %}
+{% endif %}
+
+</section>
 {% endblock %}
