@@ -1,23 +1,49 @@
-[
-  {
-    "title": "Gambia Taxi Tours & Transfers",
-    "description": "Explore Gambia's breathtaking landscapes and wildlife with our personalized driving tours. From the lush River Gambia National Park to the vibrant streets of Banjul, let us drive you through the heart of Gambia.",
-    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-car",
-    "imgAlt": "Taxi Driver Gibs inside the Car in Serekunda Gambia",
-    "buttonLink": "#contact"
-  },
-  {
-    "title": "Gambia Airport Transfer",
-    "description": "Enjoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and departures at Gambia International Airport, ensuring a smooth start and end to your journey.",
-    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car1",
-    "imgAlt": "Taxi Driver Gibs in front of the car - Serekunda Gambia",
-    "buttonLink": "#contact"
-  },
-  {
-    "title": "Gambia Customized Driving Services",
-    "description": "Experience Gambia your way with our customized driving services. Whether you're interested in cultural excursions, beach getaways, or .., we tailor our driving services to fit your exploration desires.",
-    "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car2",
-    "imgAlt": "Driver Gibs in front of the car - blurred house background - Serekunda Gambia",
-    "buttonLink": "#contact"
-  }
-]
+{
+  "en": [
+    {
+      "title": "Gambia Taxi Tours & Transfers",
+      "description": "Explore Gambia's breathtaking landscapes and wildlife with our personalized driving tours. From the lush River Gambia National Park to the vibrant streets of Banjul, let us drive you through the heart of Gambia.",
+      "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-car",
+      "imgAlt": "Taxi Driver Gibs inside the Car in Serekunda Gambia",
+      "buttonLink": "#contact"
+    },
+    {
+      "title": "Gambia Airport Transfer",
+      "description": "Enjoy stress-free travel with our reliable airport transfer services. We provide timely arrivals and departures at Gambia International Airport, ensuring a smooth start and end to your journey.",
+      "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car1",
+      "imgAlt": "Taxi Driver Gibs in front of the car - Serekunda Gambia",
+      "buttonLink": "#contact"
+    },
+    {
+      "title": "Gambia Customized Driving Services",
+      "description": "Experience Gambia your way with our customized driving services. Whether you're interested in cultural excursions, beach getaways, or .., we tailor our driving services to fit your exploration desires.",
+      "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car2",
+      "imgAlt": "Driver Gibs in front of the car - blurred house background - Serekunda Gambia",
+      "buttonLink": "#contact"
+    }
+  ],
+  "nl":
+    [
+        {
+        "title": "Gambia Taxi Tours & Transfers",
+        "description": "Verken de adembenemende landschappen en wilde dieren van Gambia met onze persoonlijke rondleidingen. Van het weelderige River Gambia National Park tot de levendige straten van Banjul, laat ons je door het hart van Gambia rijden.",
+        "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-car",
+        "imgAlt": "Taxichauffeur Gibs in de auto in Serekunda Gambia",
+        "buttonLink": "#contact"
+        },
+        {
+        "title": "Gambia Luchthaventransfer",
+        "description": "Geniet van stressvrij reizen met onze betrouwbare luchthaventransferservices. Wij zorgen voor tijdige aankomst en vertrek op de internationale luchthaven van Gambia, zodat uw reis soepel begint en eindigt.",
+        "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car1",
+        "imgAlt": "Taxichauffeur Gibs voor de auto - Serekunda Gambia",
+        "buttonLink": "#contact"
+        },
+        {
+        "title": "Gambia Op Maat Gemaakte Rij Services",
+        "description": "Ervaar Gambia op jouw manier met onze op maat gemaakte rij services. Of je nu geïnteresseerd bent in culturele excursies, stranduitstapjes of .., wij passen onze rij services aan op jouw verkenning wensen.",
+        "imgSrc": "https://softoft.sirv.com/gibs/gibs-gambia-driver-in-front-of-car2",
+        "imgAlt": "Chauffeur Gibs voor de auto - vervaagde huisachtergrond - Serekunda Gambia",
+        "buttonLink": "#contact"
+        }
+    ]
+}

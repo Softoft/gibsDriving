@@ -5,69 +5,47 @@ description: "Vind de perfecte chauffeur om rond te reizen in Gambia!"
 lang: "nl"
 ---
 
-<div class="d-flex justify-content-center heading">
-    <div class="hero-content">
-        <h1 class="text-light display-1 font-size-medium">Voel Gambia</h1>
-        <h2 class="text-light">Met een ervaren lokale chauffeur</h2>
-    </div>
-    <img alt="Gambia Chauffeur Gibs" src="https://softoft.sirv.com/gibs/gambia-market?q=2">
-</div>
-<main class="container my-3">
-    <h1>Chauffeur in Gambia: de heer Gibs</h1>
-    <p>Ontdek de schoonheid en cultuur van Gambia met Gibs' Gambia DriveHub, uw betrouwbare partner voor al uw
-        vervoersbehoeften. Of u nu op zoek bent naar een betrouwbare luchthaventransfer, een schilderachtige tour door Senegambia
-        en Kololi, of een aangepaste rij-service, wij staan voor u klaar. Onze ervaren chauffeurs zijn toegewijd aan
-        het bieden van een veilige, comfortabele en onvergetelijke reis door Gambia.</p>
 
-    <section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-        {% for service in services %}
-            <div class="col">
-                <div class="card service-card mx-auto">
-                    <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy"
-                         src="{{ service.imgSrc }}">
-                    <div class="card-body">
-                        <h2 class="card-title">{{ service.title }}</h2>
-                        <p class="card-text service-text">{{ service.description }}</p>
-                        <a class="btn btn-primary" href="{{ service.buttonLink }}" role="button">Meer leren</a>
-                    </div>
+<h1>Chauffeur in Gambia: de heer Gibs</h1>
+<p>Ontdek de schoonheid en cultuur van Gambia met Gibs' Gambia DriveHub, uw betrouwbare partner voor al uw
+    vervoersbehoeften. Of u nu op zoek bent naar een betrouwbare luchthaventransfer, een schilderachtige tour door
+    Senegambia
+    en Kololi, of een aangepaste rij-service, wij staan voor u klaar. Onze ervaren chauffeurs zijn toegewijd aan
+    het bieden van een veilige, comfortabele en onvergetelijke reis door Gambia.</p>
+
+<section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    {% for service in services.nl %}
+        <div class="col">
+            <div class="card service-card mx-auto">
+                <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy"
+                     src="{{ service.imgSrc }}">
+                <div class="card-body">
+                    <h2 class="card-title">{{ service.title }}</h2>
+                    <p class="card-text service-text">{{ service.description }}</p>
+                    <a class="btn btn-primary" href="{{ service.buttonLink }}" role="button">Meer leren</a>
                 </div>
             </div>
-        {% endfor %}
-    </section>
-
-    <section class="my-4">
-        <h2 class="mb-3">Kostenberekenaar voor chauffeurs</h2>
-        <form class="cost-form">
-            <div class="mb-3">
-                <div class="mb-1">
-                    <label class="form-label" for="distance">Afstand[km] (enkele reis):</label>
-                    <input class="form-control" id="distance" name="distance"
-                           onchange="calculateCost()" required type="number">
-                </div>
-                <label class="form-check-label" for="return">Retourreis</label>
-                <input class="form-check-input" id="return" name="return" oninput="calculateCost()"
-                       type="checkbox">
-            </div>
-
-            <label class="form-label" for="hours">Uren op bestemming:</label>
-            <input class="form-control" id="hours" name="hours" oninput="calculateCost()" required
-                   type="number">
-            <p><strong id="totalCost">Total Cost: </strong></p>
-        </form>
-    </section>
-
-    {% for blog in collections.dutchBlogs %}
-    <section class="py-2">
-        <h2>{{ blog.data.title }}</h2>
-        <a href="{{ blog.page.url }}">
-            <img alt="{{ blog.data.imgAlt }}"
-                 class="img-fluid medium-image clickable-image img-thumbnail rounded-3"
-                 loading="lazy" src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}">
-        </a>
-        <p>{{ blog.data.description }}</p>
-        <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
-    </section>
+        </div>
     {% endfor %}
+</section>
 
-</main>
-<script async src="../index.js"></script>
+<section class="my-4">
+    <h2 class="mb-3">Kostenberekenaar voor chauffeurs</h2>
+    <form class="cost-form">
+        <div class="mb-3">
+            <div class="mb-1">
+                <label class="form-label" for="distance">Afstand[km] (enkele reis):</label>
+                <input class="form-control" id="distance" name="distance"
+                       onchange="calculateCost()" required type="number">
+            </div>
+            <label class="form-check-label" for="return">Retourreis</label>
+            <input class="form-check-input" id="return" name="return" oninput="calculateCost()"
+                   type="checkbox">
+        </div>
+
+        <label class="form-label" for="hours">Uren op bestemming:</label>
+        <input class="form-control" id="hours" name="hours" oninput="calculateCost()" required
+               type="number">
+        <p><strong id="totalCost">Total Cost: </strong></p>
+    </form>
+</section>

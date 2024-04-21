@@ -7,10 +7,13 @@ title: "Redirecting..."
 {% endblock %}
 
 {% block body %}
-<p>If you are not redirected:
-    {% set links = page.url | locale_links %}
-    {% for link in links %}
-        <a hreflang="{{link.lang}}" href="https://gibsgambia.tours{{link.url}}">{{ link.lang }}</a>
-    {% endfor %}
-</p>
+<div class="container">
+    <h1>Language Redirection Page</h1>
+    <p>Apparently, you are not being correctly redirected.</p>
+    <p>The Page is available in multiple Languages:</p>
+    <ul>
+        <li><a hreflang="en" href="/en">English Version</a></li>
+        <li><a hreflang="nl" href="/nl">Dutch Version</a></li>
+    </ul>
+</div>
 {% endblock %}

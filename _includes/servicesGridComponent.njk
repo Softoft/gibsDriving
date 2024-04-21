@@ -1,0 +1,17 @@
+{% macro createForLang(lang, services) %}
+<section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    {% for service in services['en'] %}
+    <div class="col">
+        <div class="card service-card mx-auto">
+            <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy"
+                 src="{{ service.imgSrc }}">
+            <div class="card-body">
+                <h2 class="card-title">{{ service.title }}</h2>
+                <p class="card-text service-text">{{ service.description }}</p>
+                <a href="{{ service.buttonLink }}">{{ service.title }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endmacro %}

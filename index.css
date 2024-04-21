@@ -176,6 +176,11 @@ a {
 .total-cost {
     font-weight: bold;
 }
+.large-image {
+    max-height: 25rem;
+    height: 100%;
+    width: auto;
+}
 
 .medium-image {
     max-width: 20rem;

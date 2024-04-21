@@ -21,19 +21,39 @@
 
 {% block body%}{% endblock %}
 
-<section class="container text-center my-5" id="contact">
-    <h2>Contact Gibs' Gambia DriveHub</h2>
-    <p>Gibs Jaiteh</p>
-    <p>For bookings and inquiries: +220 9479117</p>
-    <a class="btn btn-success" href="https://wa.me/2209479117">Chat on WhatsApp</a>
-    <a class="btn btn-info" href="https://www.instagram.com/mrgibsgambia">Follow on Instagram</a>
-</section>
-<footer class="text-center text-lg-start my-footer">
-    <div class="text-center p-3">
-        © 2024 Gibs Jaiteh: Your Premier Gambia Driving Service <br/>
-        Gambia Driver - Gibs Jaiteh <br/>
-        Responsible for Website - Softoft, Tobias Bueck Einzelunternehmen <a href="https://www.softoft.de">https://www.softoft.de</a>
-    </div>
-</footer>
+{% if lang == "en" %}
+    <section class="container text-center my-5" id="contact">
+        <h2>Contact Gibs' Gambia DriveHub</h2>
+        <p>Gibs Jaiteh</p>
+        <p>For bookings and inquiries: +220 9479117</p>
+        <a class="btn btn-success" href="https://wa.me/2209479117">Chat on WhatsApp</a>
+        <a class="btn btn-info" href="https://www.instagram.com/mrgibsgambia">Follow on Instagram</a>
+    </section>
+    <footer class="text-center text-lg-start my-footer">
+        <div class="text-center p-3">
+            © 2024 Gibs Jaiteh: Your Premier Gambia Driving Service <br/>
+            Gambia Driver - Gibs Jaiteh <br/>
+            Responsible for Website - Softoft, Tobias Bueck Einzelunternehmen <a href="https://www.softoft.de">https://www.softoft.de</a>
+        </div>
+    </footer>
+{% endif %}
+
+{% if lang == "nl" %}
+    <section class="container text-center my-5" id="contact">
+        <h2>Contacteer Gibs' Gambia DriveHub</h2>
+        <p>Gibs Jaiteh</p>
+        <p>Voor boekingen en vragen: +220 9479117</p>
+        <a class="btn btn-success" href="https://wa.me/2209479117">Chat op WhatsApp</a>
+        <a class="btn btn-info" href="https://www.instagram.com/mrgibsgambia">Volg op Instagram</a>
+    </section>
+    <footer class="text-center text-lg-start my-footer">
+        <div class="text-center p-3">
+            © 2024 Gibs Jaiteh: Uw Premier Gambia Rij-Service <br/>
+            Gambia Chauffeur - Gibs Jaiteh <br/>
+            Verantwoordelijk voor Website - Softoft, Tobias Bueck Eenmanszaak <a href="https://www.softoft.de">https://www.softoft.de</a>
+        </div>
+    </footer>
+{% endif %}
+
 </body>
 </html>
