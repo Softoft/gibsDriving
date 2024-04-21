@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const preferredLang = window.navigator.languages ? window.navigator.languages[0] : window.navigator.language;
-			if (preferredLang.startsWith('nl')) {
-				window.location.href = '/nl/finding-driver-in-serekunda-gambia';
-			} else {
-				window.location.href = '/en/finding-driver-in-serekunda-gambia';
-			}
-		});
-    </script>
-</head>
-<body>
-<p>If you are not redirected, <a href="/en/finding-driver-in-serekunda-gambia">click here for English</a> or <a href="/nl/finding-driver-in-serekunda-gambia">click here for Dutch</a>.</p>
-</body>
-</html>
+---
+layout: "language-base.njk"
+---

@@ -1,0 +1,161 @@
+---
+title: "Taxi Service, Airport Transfer, Tours & Excursions"
+---
+{% extends "_includes/base.njk" %}
+{% block head %}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gibs' Gambia DriveHub",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unbekannt",
+            "addressLocality": "Serekunda",
+            "addressRegion": "Greater Banjul Area",
+            "postalCode": "Unbekannt",
+            "addressCountry": "GM"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Tobi Bück",
+                    "sameAs": "Local Guide"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-03-18",
+                "description": "Recently, I had the incredible opportunity to explore Gambia with Gibs' Gambia DriveHub, and it was an experience I won't soon forget. From the bustling streets of Banjul and Serekunda to the serene landscapes to the south, every moment was a journey in itself. Gibs, the man behind the wheel, wasn't just a driver; he was a guide, a storyteller, and a friend who went above and beyond to make our trip memorable. The level of personalized service and attention to detail was truly exceptional. Gibs knew all the right places, from hidden gems to popular spots, ensuring we got a genuine taste of Gambia's rich culture and stunning scenery. The vehicle was comfortable, clean, and well-maintained, making our travels across different terrains smooth and enjoyable. What stood out to me was Gibs' passion for his homeland and his dedication to providing an unparalleled service to his guests. Whether you're a solo traveler, with family, or in a group, Gibs' Gambia DriveHub is the go-to for anyone looking to discover the heart and soul of Gambia. Highly recommended for anyone visiting this beautiful country. Thank you, Gibs, for making our trip so special!"
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Chris Holland"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-13",
+                "description": "Gibril ist nicht nur ein sicherer und aufmerksamer Fahrer, er ist auch einer der freundlichsten und nettesten Menschen, die ich je getroffen habe. Auch meine ganze Familie war von ihm begeistert. Ich empfehle ihn jedem, der in Gambia ein Taxi braucht."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Fred van der Vliet",
+                    "sameAs": "Local Guide"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-16",
+                "description": "Wir haben Gibs schon seit 3 Jahren als Transportmittel für Tagesausflüge. In den letzten 2 Malen hat er uns auch vom Flughafen abgeholt und gebracht, was schneller und effizienter ist als mit einem Flugbustransfer."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Katharina Bueck"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-03-18",
+                "description": "Wir hatten eine wirklich tolle Zeit mit Gibs. Er brachte uns zu jedem Ort, den wir wollten, und das zu einem guten Preis. Er weiß viel über Gambia und ist daher auch ein ausgezeichneter Reiseführer und Reisebegleiter :)"
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "rene tromp"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-15",
+                "description": "Wir wurden vom sehr freundlichen Herrn Gibs mit seinem Taxi vom Flughafen abgeholt und zu unserem Hotel gebracht. An den folgenden Tagen unternahmen wir verschiedene Tagesausflüge mit Mister Gibs."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Huib Verweij"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-13",
+                "description": "Gibs ist ein sehr guter Fahrer und eine angenehme Gesellschaft. Er hilft, wo er kann, gibt Ratschläge und Touren."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Gino Zwart"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-13",
+                "description": "Gibs ist ein sehr freundlicher Taxifahrer. Er ist bereits seit 2 Jahren mein Taxifahrer und er ist der Beste!!"
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Janka Bah",
+                    "sameAs": "Local Guide"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-16",
+                "description": "Bester sicherer und freundlicher Führer und Fahrer aller Zeiten. Ich kann dieses Unternehmen wärmstens empfehlen"
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "James Pace"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "datePublished": "2024-04-13",
+                "description": "Freundlicher und zuverlässiger Service."
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "8"
+        }
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+{{ content | safe }}
+{% endblock %}

@@ -1,0 +1,16 @@
+---
+title: "Redirecting..."
+---
+{% extends "_includes/base.njk" %}
+{% block head %}
+<script src="/fallback-language-redirect.js"></script>
+{% endblock %}
+
+{% block body %}
+<p>If you are not redirected:
+    {% set links = page.url | locale_links %}
+    {% for link in links %}
+        <a hreflang="{{link.lang}}" href="https://gibsgambia.tours{{link.url}}">{{ link.lang }}</a>
+    {% endfor %}
+</p>
+{% endblock %}

@@ -1,0 +1,87 @@
+---
+title: "Gambia Gibs Driver"
+description: "Gibs Jaiteh is a professional driver in The Gambia. He offers airport transfers, tours, and more. Contact him now!"
+mainImageName: "logo"
+imgAlt: "Gibs Jaiteh"
+isoDatePublished: "2024-01-01"
+isoDateModified: "2024-01-01"
+tags: blog
+---
+{% extends "_includes/base.njk"%}
+{% block head %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ title }}",
+            "image": [
+        "https://softoft.sirv.com/gibs/{{ mainImageName }}"
+        ],
+        "datePublished": "{{ isoDatePublished }}",
+        "dateModified": "{{ isoDateModified }}",
+        "author": [{
+            "@type": "Person",
+            "name": "Tobias Bueck",
+            "url": "https://wwww.softoft.de/de"
+        }]
+    }
+</script>
+{% if faqs %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {% for faq in faqs %}
+            {
+                "@type": "Question",
+                "name": "{{ faq.question | escape }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ faq.answer | escape }}"
+                }
+            }{% if not loop.last %},{% endif %}
+        {% endfor %}
+        ]
+    }
+    </script>
+{% endif %}
+
+
+{% endblock %}
+{% block body %}
+<div class="container">
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand highlighted-text fs-5" href="/">Gibs' Gambia DriveHub</a>
+    </nav>
+</div>
+<article class="container">
+    <img src="https://softoft.sirv.com/gibs/{{ mainImageName }}" class="img-fluid rounded" alt="{{ imgAlt }}">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+    {% if faqs %}
+        <section class="faq">
+            <div class="accordion" id="accordionExample">
+
+                <h2>FAQ</h2>
+                {% for faq in faqs %}
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{ faq.question | escape }}
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{ faq.answer | escape }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+</article>
+{% endblock %}

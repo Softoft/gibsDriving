@@ -1,3 +1,7 @@
+---
+eleventyExcludeFromCollections: true
+---
+
 # Gibs' Gambia DriveHub
 
 Welcome to the official repository for Gibs' Gambia DriveHub, your premier choice for personalized driving services in Gambia. Gibs offers a unique, friendly, and professional driving experience, whether you're in need of an airport transfer, a scenic safari, or a custom tour around the beautiful landscapes of Gambia.

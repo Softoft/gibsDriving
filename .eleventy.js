@@ -8,8 +8,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("images");
 	eleventyConfig.addPassthroughCopy("index.css");
 	eleventyConfig.addPassthroughCopy("index.js");
+	eleventyConfig.addPassthroughCopy("fallback-language-redirect.js");
 	eleventyConfig.addPassthroughCopy("CNAME");
-	eleventyConfig.addPassthroughCopy("sitemap.xml");
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("google260ae717eb48ea92.html");
 	eleventyConfig.addCollection("englishBlogs", function(collectionApi) {
