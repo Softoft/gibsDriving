@@ -12,3 +12,7 @@
 
 /blog/top-places-to-visit-in-gambia /blog/en/top-places-to-visit-in-gambia  302  Language=en
 /blog/top-places-to-visit-in-gambia /blog/nl/top-places-to-visit-in-gambia  302  Language=nl
+
+/en/* /en/404 404
+/nl/* /nl/404 404
+
