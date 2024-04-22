@@ -1,18 +1,27 @@
 /  /en/  302  Language=en
 /  /nl/  302  Language=nl
+/ /en/  302
 
 /blog/banjul-airport-gambia-transport /blog/en/banjul-airport-gambia-transport  302  Language=en
 /blog/banjul-airport-gambia-transport /blog/nl/banjul-airport-gambia-transport  302  Language=nl
+/blog/banjul-airport-gambia-transport /blog/en/banjul-airport-gambia-transport  302
+
 
 /blog/finding-driver-in-serekunda-gambia /blog/en/finding-driver-in-serekunda-gambia  302  Language=en
 /blog/finding-driver-in-serekunda-gambia /blog/en/finding-driver-in-serekunda-gambia  302  Language=nl
+/blog/finding-driver-in-serekunda-gambia /blog/en/finding-driver-in-serekunda-gambia  302
+
 
 /blog/gambia-travel-guide /blog/en/gambia-travel-guide  302  Language=en
 /blog/gambia-travel-guide /blog/nl/gambia-travel-guide  302  Language=nl
+/blog/gambia-travel-guide /blog/en/gambia-travel-guide  302
+
 
 /blog/top-places-to-visit-in-gambia /blog/en/top-places-to-visit-in-gambia  302  Language=en
 /blog/top-places-to-visit-in-gambia /blog/nl/top-places-to-visit-in-gambia  302  Language=nl
+/blog/top-places-to-visit-in-gambia /blog/en/top-places-to-visit-in-gambia  302
 
 /en/* /en/404 404
 /nl/* /nl/404 404
 
+* /en/404 404
