@@ -26,22 +26,6 @@
             </url>
     
             <url>
-                <loc>https://www.gibsgambia.tours/nl/blog/gambia-travel-guide/</loc>
-            </url>
-    
-            <url>
-                <loc>https://www.gibsgambia.tours/nl/blog/top-places-to-visit-in-gambia/</loc>
-            </url>
-    
-            <url>
-                <loc>https://www.gibsgambia.tours/nl/blog/banjul-airport-gambia-transport/</loc>
-            </url>
-    
-            <url>
-                <loc>https://www.gibsgambia.tours/nl/blog/finding-driver-in-serekunda-gambia/</loc>
-            </url>
-    
-            <url>
                 <loc>https://www.gibsgambia.tours/nl/</loc>
             </url>
     
@@ -71,6 +55,34 @@
     
             <url>
                 <loc>https://www.gibsgambia.tours/en/404/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/python_scripts/.venv/Lib/site-packages/idna-3.7.dist-info/LICENSE/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/python_scripts/.venv/Lib/site-packages/httpcore-1.0.5.dist-info/licenses/LICENSE/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/python_scripts/.venv/Lib/site-packages/httpx-0.27.0.dist-info/licenses/LICENSE/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/nl/blog/banjul-airport-gambia-transport/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/nl/blog/finding-driver-in-serekunda-gambia/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/nl/blog/gambia-travel-guide/</loc>
+            </url>
+    
+            <url>
+                <loc>https://www.gibsgambia.tours/nl/blog/top-places-to-visit-in-gambia/</loc>
             </url>
     
 </urlset>

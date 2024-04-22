@@ -17,8 +17,12 @@ lang: "en"
         {% for service in services.en %}
             <div class="col">
                 <div class="card service-card mx-auto">
-                    <img alt="{{ service.imgAlt }}" class="card-img-top img-fluid service-img" loading="lazy"
-                         src="{{ service.imgSrc }}?w=400">
+                    <img alt="{{ service.imgAlt }}"
+                         data-options="threshold:400"
+                         class="Sirv service-img"
+                         src="{{ service.imgSrc }}?q=5&w=100"
+                         data-src="{{ service.imgSrc }}"
+                    >
                     <div class="card-body">
                         <h2 class="card-title">{{ service.title }}</h2>
                         <p class="card-text service-text">{{ service.description }}</p>

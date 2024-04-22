@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.12 (gibsDriving)" />
+  </component>
   <component name="ProjectResources">
     <resource url="http://www.sitemaps.org/schemas/sitemap/0.9" location="$APPLICATION_HOME_DIR$/lib/app.jar!/standardSchemas/XMLSchema.dtd" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (gibsDriving)" project-jdk-type="Python SDK" />
 </project>

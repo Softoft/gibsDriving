@@ -43,19 +43,27 @@ body {
     background-color: var(--background-color);
 }
 
-.heading > img {
+.hero-image-container > img {
     position: absolute;
     z-index: -1;
-    height: 200px;
+    height: 100%;
+    width: auto;
+    max-height: 400px;
 }
 
+.hero-image-container{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+}
 
 .heading {
     position: static;
     background-color: rgba(90, 80, 60, 0.7);
     width: auto;
     height: 200px;
-
 }
 
 .font-size-medium {
@@ -67,8 +75,8 @@ body {
         height: 300px;
     }
 
-    .heading > img {
-        height: 300px;
+    .hero-image-container {
+        max-width: 500px;
     }
     .font-size-medium {
         font-size: 4rem;
@@ -80,10 +88,12 @@ body {
         height: 400px;
     }
 
-    .heading > img {
-        height: 400px;
+    .hero-image-container{
+        max-width: 600px;
     }
-
+    .hero-image-container > img{
+        max-height: 400px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -91,8 +101,11 @@ body {
         height: 500px;
     }
 
-    .heading > img {
-        height: 500px;
+    .hero-image-container{
+        max-width: 700px;
+    }
+    .hero-image-container > img{
+        max-height: 500px;
     }
 
     .font-size-medium {
@@ -105,8 +118,11 @@ body {
         height: 600px;
     }
 
-    .heading > img {
-        height: 600px;
+    .hero-image-container {
+        max-width: 900px;
+    }
+    .hero-image-container > img{
+        max-height: 600px;
     }
 }
 
@@ -116,8 +132,11 @@ body {
         height: 700px;
     }
 
-    .heading > img {
-        height: 700px;
+    .hero-image-container {
+        max-width: 1200px;
+    }
+    .hero-image-container > img{
+        max-height: 700px;
     }
 
 }
@@ -127,8 +146,11 @@ body {
         height: 800px;
     }
 
-    .heading > img {
-        height: 800px;
+    .hero-image-container {
+        max-width: 1400px;
+    }
+    .hero-image-container > img{
+        max-height: 800px;
     }
 }
 
@@ -145,6 +167,7 @@ body {
 
 .service-img {
     height: 50%;
+    max-height: 200px;
     object-fit: cover;
     object-position: 50% 2%;
 }
