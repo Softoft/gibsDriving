@@ -150,4 +150,4 @@ def create_nl_blogs():
 
 
 if __name__ == '__main__':
-    clean_files("../nl/blog")
+    create_nl_blogs()

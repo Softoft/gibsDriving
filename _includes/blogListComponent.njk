@@ -6,14 +6,16 @@
         {% for blog in collections.dutchBlogs %}
             <section class="py-2">
                 <h3>{{ blog.data.title }}</h3>
-                <a href="{{ blog.page.url }}">
-                    <img alt="{{ blog.data.imgAlt }}"
-                         data-options="threshold:400"
-                         class="Sirv img-fluid medium-image clickable-image img-thumbnail rounded-3"
-                          src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}?q=5&w=100"
-                         data-src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}"
-                    >
-                </a>
+                <div class="medium-image">
+                    <a href="{{ blog.page.url }}">
+                        <img alt="{{ blog.data.imgAlt }}"
+                             data-options="threshold:400"
+                             class="Sirv img-fluid medium-image clickable-image img-thumbnail rounded-3"
+                             src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}?q=5&w=100"
+                             data-src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}"
+                        >
+                    </a>
+                </div>
                 <p>{{ blog.data.description }}</p>
                 <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
             </section>
@@ -26,14 +28,16 @@
         {% for blog in collections.englishBlogs %}
             <section class="py-2">
                 <h3>{{ blog.data.title }}</h3>
-                <a href="{{ blog.page.url }}">
-                    <img alt="{{ blog.data.imgAlt }}"
-                         data-options="threshold:400"
-                         class="Sirv img-fluid medium-image clickable-image img-thumbnail rounded-3"
-                         src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}?q=5&w=100"
-                         data-src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}"
-                    >
-                </a>
+                <div class="medium-image">
+                    <a href="{{ blog.page.url }}">
+                        <img alt="{{ blog.data.imgAlt }}"
+                             data-options="threshold:400"
+                             class="Sirv img-fluid medium-image clickable-image img-thumbnail rounded-3"
+                             src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}?q=5&w=100"
+                             data-src="https://softoft.sirv.com/gibs/{{ blog.data.mainImageName }}"
+                        >
+                    </a>
+                </div>
                 <p>{{ blog.data.description }}</p>
                 <a href="{{ blog.page.url }}">{{ blog.data.title }}</a>
             </section>
