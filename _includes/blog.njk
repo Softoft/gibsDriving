@@ -33,14 +33,14 @@ tags: blog
             "@type": "FAQPage",
             "mainEntity": [
         {% for faq in faqs %}
-            {
-                "@type": "Question",
-                "name": "{{ faq.question | escape }}",
+        {
+            "@type": "Question",
+            "name": "{{ faq.question | escape }}",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "{{ faq.answer | escape }}"
                 }
-            }{% if not loop.last %}{% endif %}
+            }{% if not loop.last %},{% endif %}
         {% endfor %}
         ]
     }
