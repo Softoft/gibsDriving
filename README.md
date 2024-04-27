@@ -40,6 +40,16 @@ https://www.itravelnet.com/gambia/
 https://thetandemramble.com/destinations/africa/traveling-the-gambia/
 https://www.my-gambia.com/mymagazine/many-reasons-to-visit-the-gambia/
 https://transafrica.biz/en/category/gambia-en/?gad_source=1&gclid=Cj0KCQjw-_mvBhDwARIsAA-Q0Q5EflkH75h4BhFYiw5UZZgZAg2hd95kFMlAfaqducUnVYeVqfEKj-oaAttvEALw_wcB
-
+https://clairesfootsteps.com/category/living-abroad/
+https://www.edbabar.com/travel/senegalandthegambia
+https://www.worldwidewendy.be/en/blog/a-week-in-the-gambia
+https://www.insidethetravellab.com/is-the-gambia-worth-visiting/
+https://travellingtom.com/blog/quick-travel-guide-the-gambia
+https://thetravelhack.com/gambia/im-going-to-the-gambia/
+https://www.gambia.co.uk/blog/holidays
+https://www.my-gambia.com/#contact
+https://www.itravelnet.com/add-a-travel-site/
+https://thetravelmanuel.com/write-for-us/#gsc.tab=0
+https://practicalwanderlust.com/write-for-us/
 ## Thanks
 Thank you for visiting Gibs' Gambia DriveHub. We look forward to driving you safely and comfortably on your next adventure in Gambia!
