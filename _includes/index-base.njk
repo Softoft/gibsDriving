@@ -159,12 +159,11 @@ title: "Taxi Service, Airport Transfer, Tours & Excursions"
 {% block body %}
 <main class="container my-3">
 {% if lang == "en" %}
-<h1 class="text-center display-5">Taxi Service, Airport Transfer, Tours & Excursions</h1>
+<h1 class="text-center display-5 mb-3">Taxi Service, Airport Transfer, Tours & Excursions</h1>
 {% endif %}
 {% if lang == "nl" %}
-<h1 class="text-center display-5">Taxi Service, Luchthaven Transfer, Tours & Excursies</h1>
+<h1 class="text-center display-5 mb-3">Taxi Service, Luchthaven Transfer, Tours & Excursies</h1>
 {% endif %}
-
 
     {{ content | safe }}
     {% import "blogListComponent.njk" as blogList %}
