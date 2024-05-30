@@ -43,25 +43,20 @@ body {
     background-color: var(--background-color);
 }
 
-.hero-image-container > img {
-    position: absolute;
-    z-index: -1;
-    height: 100%;
-    width: auto;
-    max-height: 400px;
-}
 
 .hero-image-container{
-    position: absolute;
-    z-index: -1;
-    height: 100%;
+    margin-bottom: -5rem;
     width: 100%;
-    max-width: 400px;
+    background-color: rgba(90, 80, 60, 0.25)
+}
+.hero-image{
+    max-height: 400px;
+    max-width: 600px  !important;
 }
 
 .heading {
     position: static;
-    background-color: rgba(90, 80, 60, 0.7);
+    background-color: rgba(90, 80, 60, 0.25);
     width: auto;
     height: 200px;
 }
@@ -77,8 +72,11 @@ body {
 
 .hero-content {
     top: 5rem;
-    left: 0;
+    left: 80px;
     position: relative;
+    @media (min-width: 800px) {
+        left:0;
+    }
 }
 
 .service-card {
@@ -169,10 +167,6 @@ a {
     .heading {
         height: 300px;
     }
-
-    .hero-image-container {
-        max-width: 500px;
-    }
     .font-size-medium {
         font-size: 4rem;
     }
@@ -181,13 +175,6 @@ a {
 @media (min-width: 610px) {
     .heading {
         height: 400px;
-    }
-
-    .hero-image-container{
-        max-width: 600px;
-    }
-    .hero-image-container > img{
-        max-height: 400px;
     }
     .my-card{
         width: 350px;
@@ -203,13 +190,6 @@ a {
         height: 500px;
     }
 
-    .hero-image-container{
-        max-width: 700px;
-    }
-    .hero-image-container > img{
-        max-height: 500px;
-    }
-
     .font-size-medium {
         font-size: 8rem;
     }
@@ -222,13 +202,6 @@ a {
     .heading {
         height: 600px;
     }
-
-    .hero-image-container {
-        max-width: 900px;
-    }
-    .hero-image-container > img{
-        max-height: 600px;
-    }
     .places-container{
         max-width: 800px;
     }
@@ -239,13 +212,6 @@ a {
     .heading {
         height: 700px;
     }
-
-    .hero-image-container {
-        max-width: 1200px;
-    }
-    .hero-image-container > img{
-        max-height: 700px;
-    }
     .places-container{
         max-width: 1000px;
     }
@@ -255,13 +221,6 @@ a {
 @media (min-width: 1400px) {
     .heading {
         height: 800px;
-    }
-
-    .hero-image-container {
-        max-width: 1400px;
-    }
-    .hero-image-container > img{
-        max-height: 800px;
     }
     .places-container{
         max-width: 1200px;
