@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
 		defaultLanguage: "en",
 	});
 	eleventyConfig.addPassthroughCopy("images");
+	eleventyConfig.addPassthroughCopy("guest_posts");
 	eleventyConfig.addPassthroughCopy("index.css");
 	eleventyConfig.addPassthroughCopy("index.js");
 	eleventyConfig.addPassthroughCopy("fallback-language-redirect.js");

@@ -5,45 +5,110 @@ description: "Gibs Gambia Taxi - Find the perfect Driver for getting around in t
 lang: "en"
 ---
 
-    <section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-        {% for service in services.en %}
-            <div class="col">
-                <div class="card service-card mx-auto">
-                    <img alt="{{ service.imgAlt }}"
-                         data-options="threshold:400"
-                         class="Sirv service-img"
-                         src="{{ service.imgSrc }}?q=5&w=100"
-                         data-src="{{ service.imgSrc }}"
-                    >
-                    <div class="card-body">
-                        <h2 class="card-title">{{ service.title }}</h2>
-                        <p class="card-text service-text">{{ service.description }}</p>
-                        <a href="{{ service.buttonLink }}">{{ service.title }}</a>
-                    </div>
+<section class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    {% for service in services.en %}
+        <div class="col">
+            <div class="card service-card mx-auto">
+                <img alt="{{ service.imgAlt }}"
+                     data-options="threshold:400"
+                     class="Sirv service-img"
+                     src="{{ service.imgSrc }}?q=5&w=100"
+                     data-src="{{ service.imgSrc }}"
+                >
+                <div class="card-body">
+                    <h2 class="card-title">{{ service.title }}</h2>
+                    <p class="card-text service-text">{{ service.description }}</p>
+                    <a href="{{ service.buttonLink }}">{{ service.title }}</a>
                 </div>
             </div>
-        {% endfor %}
-    </section>
+        </div>
+    {% endfor %}
+</section>
 
 
-    <section class="my-4">
-        <h2 class="mb-3">Driver Cost Calculator</h2>
-        <form class="cost-form">
-            <div class="mb-3">
-                <div class="mb-1">
-                    <label class="form-label" for="distance">Distance[km] (one way):</label>
-                    <input class="form-control" id="distance" name="distance"
-                           onchange="calculateCost()" required type="number">
-                </div>
-                <label class="form-check-label" for="return">Round Trip</label>
-                <input class="form-check-input" id="return" name="return" oninput="calculateCost()"
-                       type="checkbox">
-
+<section class="my-4">
+    <h2 class="mb-3">Driver Cost Calculator</h2>
+    <form class="cost-form">
+        <div class="mb-3">
+            <div class="mb-1">
+                <label class="form-label" for="distance">Distance[km] (one way):</label>
+                <input class="form-control" id="distance" name="distance"
+                       onchange="calculateCost()" required type="number">
             </div>
+            <label class="form-check-label" for="return">Round Trip</label>
+            <input class="form-check-input" id="return" name="return" oninput="calculateCost()"
+                   type="checkbox">
 
-            <label class="form-label" for="hours">Hours at Destination:</label>
-            <input class="form-control" id="hours" name="hours" oninput="calculateCost()" required
-                   type="number">
-            <p><strong id="totalCost">Total Cost: </strong></p>
-        </form>
-    </section>
+        </div>
+
+        <label class="form-label" for="hours">Hours at Destination:</label>
+        <input class="form-control" id="hours" name="hours" oninput="calculateCost()" required
+               type="number">
+        <p><strong id="totalCost">Total Cost: </strong></p>
+    </form>
+</section>
+
+
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .rating {
+        color: gold;
+    }
+</style>
+<div class="container mt-5">
+    <h1 class="mb-4">Google Reviews</h1>
+    <div id="reviews" class="row"></div>
+</div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKCFtROattQOYnJ81PZYeKwIno9am6PvM&libraries=places"></script>
+<script>
+	const apiKey = ""
+
+	function initMap() {
+		const placeId = 'ChIJG0D4TYqbwg4R-9BaVn4zixM';
+		const service = new google.maps.places.PlacesService(document.createElement('div'));
+
+		service.getDetails({placeId: placeId}, (place, status) => {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
+				displayReviews(place.reviews);
+			} else {
+				document.getElementById('reviews').innerText = 'Error fetching reviews';
+			}
+		});
+	}
+
+	function displayReviews(reviews) {
+		const reviewsContainer = document.getElementById('reviews');
+		reviewsContainer.innerHTML = '';
+
+		reviews.forEach(review => {
+			const reviewElement = document.createElement('div');
+			reviewElement.className = 'col-md-4';
+			reviewElement.innerHTML = `
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${review.author_name}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">${generateStars(review.rating)}</h6>
+              <p class="card-text">${review.text}</p>
+              <p class="card-text"><small class="text-muted">${new Date(review.time * 1000).toLocaleDateString()}</small></p>
+            </div>
+          </div>
+        `;
+			reviewsContainer.appendChild(reviewElement);
+		});
+	}
+
+	function generateStars(rating) {
+		let stars = '';
+		for (let i = 0; i < 5; i++) {
+			stars += i < rating ? '★' : '☆';
+		}
+		return `<span class="rating">${stars}</span>`;
+	}
+
+	window.onload = initMap;
+</script>
