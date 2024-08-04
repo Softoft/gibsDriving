@@ -1,12 +1,13 @@
 ---
 layout: "blog.njk"
-title: "Gambia Travel: A Comprehensive Guide - Best Places - by Taxi"
-description: "In this guide, we will cover everything you need to know about traveling to the Gambia. Driving to the top attractions, taking the taxi to the local customs and traditions, we've got you covered. Whether you're planning driving to the beach, or taking the taxi to the National Park. The Gambia has something for everyone. So sit back, relax, and let us take you on a taxi drive through Gambia."
+title: "Gambia Travel: A Comprehensive Guide - Best Places to Visit"
+description: "This Gambia Travel Guide informs you about best places to visit, transport, accommodation and more. Plan your trip to Gambia now!"
 mainImageName: "taxi-driver"
 imgAlt: "Picture of chauffeur in front of taxi at the airport - Gambia"
 lang: "en"
-isoDatePublished: "2024-04-01"
+isoDatePublished: "2024-08-04"
 ---
+<script src="/index.js"></script>
 <section>
     <section>
         {% include "cdnImage" size: "medium", imageName: "gambia-occean-drone.jpg", alt: "Gambia Serekunda - Beach - Drone Photo" %}
@@ -72,14 +73,20 @@ isoDatePublished: "2024-04-01"
         <section>
             <h3>3.1. Passport and Visa Requirements</h3>
             <p>To enter The Gambia, your passport must be valid for the duration of your stay. You do not need a visa to
-                visit
-                The Gambia if your stay is less than a month.</p>
+                visit The Gambia if your stay is less than a month.</p>
         </section>
         <section>
             <h3>3.2. Money and Currency</h3>
             <p>The official currency of The Gambia is the Gambian Dalasi. The Gambia is primarily a cash-based economy,
                 and it is recommended to carry a sufficient amount of cash for your expenses.
             </p>
+            <h4>Current Exchange Rates</h4>
+            Today, <span id="today"></span> the rate is 1 EUR = <span id="exchangeRate"></span> GMD
+            <script async>
+                const today = new Date().toLocaleDateString('en-GB');
+                document.getElementById('today').textContent = today;
+                fetchExchangeRate().then(exchangeRate => document.getElementById('exchangeRate').textContent = Math.round(exchangeRate).toString());
+            </script>
         </section>
         <section>
             <h3>3.3. Health and Safety</h3>
@@ -192,4 +199,5 @@ isoDatePublished: "2024-04-01"
                     Travel Advice</a></li>
         </ul>
     </section>
+
 </section>
