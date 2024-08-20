@@ -1,4 +1,0 @@
-
-Sitemap: https://www.gibsgambia.tours/sitemap.xml
-User-agent: *
-Disallow:

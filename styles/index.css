@@ -1,0 +1,275 @@
+:root {
+    --highlight-color: #E94533;
+    --background-color: #f6f1e8;
+    --bs-primary-bg-subtle: #f6f1e8;
+}
+
+html {
+    font-size: 12px;
+}
+
+@media (min-width: 400px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 800px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+
+body {
+    background-color: var(--background-color);
+}
+
+
+.hero-image-container{
+    margin-bottom: -5rem;
+    width: 100%;
+    background-color: rgba(90, 80, 60, 0.25)
+}
+.hero-image{
+    max-height: 400px;
+    max-width: 600px  !important;
+}
+
+.heading {
+    position: static;
+    background-color: rgba(90, 80, 60, 0.25);
+    width: auto;
+    height: 200px;
+}
+
+.font-size-medium {
+    font-size: 2rem;
+}
+.places-container{
+    max-width: 400px;
+}
+
+
+
+.hero-content {
+    top: 5rem;
+    left: 80px;
+    position: relative;
+    @media (min-width: 800px) {
+        left:0;
+    }
+}
+
+.service-card {
+    height: 30rem;
+    max-width: 20rem;
+    font-size: 0.9rem
+}
+
+.service-img {
+    height: 40%;
+    object-fit: cover;
+    object-position: 50% 2%;
+}
+.blog-thumbnail-image{
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 2%;
+}
+
+.service-text {
+    height: 10rem;
+}
+
+.highlighted-text {
+    color: #550803;
+}
+
+a {
+    color: #550803;
+}
+
+.my-navbar {
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.cost-form {
+    max-width: 400px;
+}
+
+.total-cost {
+    font-weight: bold;
+}
+.expand-image{
+    max-width: 250px;
+    max-height: 250px;
+}
+.large-image {
+    max-height: 25rem;
+    height: 100%;
+    width: auto;
+}
+
+.medium-image {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+}
+
+.small-image {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+}
+
+.clickable-image {
+    transition: transform 0.2s, opacity 0.2s;
+    cursor: pointer;
+}
+
+.clickable-image:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.blog-section{
+    padding-bottom: 1rem;
+}
+.image-container{
+    width: 100%;
+    height: 200px;
+}
+.my-card{
+    min-height: 400px;
+    width: 250px;
+    background-color: #ddd
+}
+
+.my-card-title {
+    font-size: 1.4rem;
+}
+
+@media (min-width: 400px) {
+    .my-card {
+        width: 350px;
+    }
+    .heading {
+        height: 300px;
+    }
+    .font-size-medium {
+        font-size: 4rem;
+    }
+
+    .places-container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 610px) {
+    .heading {
+        height: 400px;
+    }
+
+    .expand-image{
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    .service-card {
+        height: 30rem;
+        max-width: 20rem;
+        font-size: 0.9rem
+    }
+}
+
+@media (min-width: 800px) {
+    .heading {
+        height: 500px;
+    }
+
+    .font-size-medium {
+        font-size: 8rem;
+    }
+    .places-container{
+        max-width: 100%;
+    }
+
+    .service-text {
+        height: 9rem;
+    }
+
+    .service-card {
+        height: 32rem;
+        max-width: 23rem;
+        font-size: 0.85rem
+    }
+
+    .my-card-title {
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .heading {
+        height: 600px;
+    }
+    .places-container{
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .heading {
+        height: 700px;
+    }
+    .places-container{
+        max-width: 1100px;
+    }
+
+    .my-card-title {
+        height: 4rem;
+        font-size: 1.6rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .heading {
+        height: 800px;
+    }
+    .places-container{
+        max-width: 1200px;
+    }
+}
+
+
+
+
+.card {
+    margin-bottom: 20px;
+}
+
+.rating {
+    color: gold;
+}

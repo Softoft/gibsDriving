@@ -1,0 +1,19 @@
+---
+title: "Redirecting..."
+---
+{% extends "base.njk" %}
+{% block head %}
+<script src="/scripts/fallback-language-redirect.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Language Redirection Page</h1>
+    <p>Apparently, you are not being correctly redirected.</p>
+    <p>The Page is available in multiple Languages:</p>
+    <ul>
+        <li><a hreflang="en" href="/en">English Version</a></li>
+        <li><a hreflang="nl" href="/nl">Dutch Version</a></li>
+    </ul>
+</div>
+{% endblock %}

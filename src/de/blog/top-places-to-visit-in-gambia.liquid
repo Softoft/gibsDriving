@@ -1,0 +1,36 @@
+---
+layout: blog.njk
+title: "Top 20 Sehenswürdigkeiten in Gambia"
+description: "Entdecken Sie die Top 20 Sehenswürdigkeiten in Gambia mit Mr. Gibs, Ihrem Taxifahrer. Von Krokodilbecken bis hin zu alten Steinkreisen - erkunden Sie die besten Attraktionen Gambias."
+mainImageName: "gambia-flag"
+imgAlt: "Nationalflagge von Gambia"
+isoDatePublished: "2024-04-01"
+lang: "de"
+faqs:
+    - question: "Was sind die wichtigsten Sehenswürdigkeiten in Gambia?"
+      answer: "Zu den wichtigsten Sehenswürdigkeiten in Gambia gehören das Kachikally Krokodilbecken, das Abuko Naturreservat, der Bijilo Waldpark und die alten Steinkreise von Senegambia."
+    - question: "Ist es sicher, die Krokodilbecken in Gambia zu besuchen?"
+      answer: "Ja, der Besuch des Kachikally Krokodilbeckens ist sicher, mit geführten Touren, die es ermöglichen, Krokodile in einer kontrollierten Umgebung aus nächster Nähe zu erleben."
+    - question: "Wie komme ich zu den wichtigsten Orten in Gambia?"
+      answer: "Für eine bequeme und zuverlässige Beförderung zu den wichtigsten Sehenswürdigkeiten Gambias sollten Sie in Erwägung ziehen, einen professionellen Fahrer wie Mr. Gibs zu engagieren, der maßgeschneiderte Touren und Transfers anbietet."
+    - question: "Gibt es UNESCO-Welterbestätten in Gambia?"
+      answer: "Ja, Gambia beherbergt die UNESCO-Welterbestätte Kunta Kinteh Island, die für ihre historische Bedeutung im transatlantischen Sklavenhandel bekannt ist."
+---
+
+<h2>Einführung</h2>
+<h2>Top-Sehenswürdigkeiten in Gambia</h2>
+<div class="places-container my-3 mx-auto row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2">
+    {% for place in top_places.de %}
+        <div class="col d-flex align-items-center justify-content-center">
+            <div class="card rounded-3 my-card">
+                <div class="image-container rounded-5 d-flex justify-content-center mt-2">
+                    {% include "cdnImage" size: "expand", imageName: place.imageName, alt: place.imageAlt %}
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ place.name }}</h3>
+                    <p class="card-text">{{ place.description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

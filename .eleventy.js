@@ -7,20 +7,23 @@ module.exports = function (eleventyConfig) {
 	});
 	eleventyConfig.addPassthroughCopy("images");
 	eleventyConfig.addPassthroughCopy("guest_posts");
-	eleventyConfig.addPassthroughCopy("index.css");
-	eleventyConfig.addPassthroughCopy("index.js");
-	eleventyConfig.addPassthroughCopy("fallback-language-redirect.js");
+	eleventyConfig.addPassthroughCopy("styles");
+	eleventyConfig.addPassthroughCopy("scripts");
 	eleventyConfig.addPassthroughCopy("CNAME");
-	eleventyConfig.addPassthroughCopy("google260ae717eb48ea92.html");
 	eleventyConfig.addCollection("englishBlogs", function(collectionApi) {
 		return collectionApi.getFilteredByTag("blog").filter((item) => item.page.lang === "en");
 	});
 	eleventyConfig.addCollection("dutchBlogs", function(collectionApi) {
 		return collectionApi.getFilteredByTag("blog").filter((item) => item.page.lang === "nl");
 	});
+	eleventyConfig.addCollection("germanBlogs", function (collectionApi) {
+		return collectionApi.getFilteredByTag("blog").filter((item) => item.page.lang === "de");
+	});
 	return {
 		dir: {
-			output: "docs",
+			input: "src",
+			includes: "_includes",
+			output: "_site",
 		},
 	};
 };
